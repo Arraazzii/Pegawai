@@ -3,6 +3,13 @@
     <link rel="stylesheet" type="text/css" href="assets/extra-libs/multicheck/multicheck.css">
     <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
     <link href="assets/libs/toastr/build/toastr.min.css" rel="stylesheet">
+    <style type="text/css">
+        tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+    </style>
     
 
             <!-- Container fluid  -->
@@ -56,9 +63,9 @@
                                     <table id="zero_config" class="table table-striped table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>NIP</th>
-                                                <th>Nama Pegawai</th>
-                                                <th>Tempat, Tanggal Lahir</th>
+                                                <th width="10px">No.</th>
+                                                <th width="275px">Nama Pegawai</th>
+                                                <th>TTL</th>
                                                 <th>No. Telp</th>
                                                 <th>Jabatan</th>
                                                 <th>Status</th>
@@ -67,7 +74,7 @@
                                         </thead>  
                                         <tbody>
                                             <?php
-                                        
+                                            $no = 1;
                                             $view = mysqli_query($connect, "SELECT * FROM tbl_pegawai JOIN tbl_kelahiran ON tbl_pegawai.id_lahir = tbl_kelahiran.id_lahir JOIN tbl_jabatan ON tbl_pegawai.id_jabatan = tbl_jabatan.id_jabatan JOIN tbl_data_jabatan ON tbl_jabatan.jabatan = tbl_data_jabatan.kode_jabatan JOIN tbl_no_telp ON tbl_pegawai.id_telp = tbl_no_telp.id_telp JOIN tbl_status ON tbl_status.id_status = tbl_pegawai.id_status WHERE tbl_status.status_peg != 'STP0003'");
                                                     
                                             while ($row = mysqli_fetch_array($view)) {
@@ -75,8 +82,8 @@
                                                 
                                             ?>
                                             <tr>
-                                                <td><?php echo $row['nik'];?></td>
-                                                <td><?php echo $row['nama'];?></td>
+                                                <td width="10px"><?php echo $no++;?>.</td>
+                                                <td width="275px"><?php echo $row['nik'];?> - <?php echo $row['nama'];?></td>
                                                 <td><?php echo $row['tmpt_lahir'];?>, <?php echo tgl_indo($row['tgl_lahir']);?></td>
                                                 <td><?php echo $row['hp'];?></td>
                                                 <td><?php echo $row['nama_jabatan'];?></td>
@@ -84,10 +91,9 @@
                                                 <td>
                                                     <a data-toggle="tooltip" title="Lihat Detail" href="?view=detail-pegawai&id=997386798hupa&name=pegaaplication&detailPegawai&nip=<?php echo $row['nik'];?>">
                                                         <span class="fa fa-list"></span>
-                                                    </a> | <?php if ($row['ket'] == 'Aktif') { ?>
+                                                    </a>  <?php if ($row['ket'] == 'Aktif') { ?>
                                                         <a href=
-                                                    "config_config_cs/non-aktif-pegawai-con.php?id=<?php echo $row['nik']; ?>&hal=data-pegawai&add=pegawai" data-toggle="tooltip" title="Non Aktifkan" onclick='/return konfirmasi("
-                                                    NonAktifkan Pegawai <?php echo $row['nik'];?>")'><span class='fa fa-times'></span></a>
+                                                    "config_config_cs/non-aktif-pegawai-con.php?id=<?php echo $row['nik']; ?>&hal=data-pegawai&add=pegawai" data-toggle="tooltip" title="Non Aktifkan" onClick="return confirm('Anda Yakin Ingin Nonaktifkan <?php echo $row['nama'];?> ?')"><span class='fa fa-times'></span></a>
                                                     <?php    
                                                     } else { ?>
                                                         <a href=
@@ -95,8 +101,8 @@
                                                     Aktifkan Pegawai <?php echo $row['nik'];?>")'><span class='fa fa-check'></span></a>
                                                     <?php
                                                     } ?>
-                                                     | 
-                                                    <a href="?view=edit-pegawai&id=997386799hupa&name=pegaaplication&editPegawai&nip=<?php echo $row['nik'];?>" data-toggle="tooltip" title="Edit Data"><span class="fa fa-edit"></span></a> | 
+                                                    <br>
+                                                    <a href="?view=edit-pegawai&id=997386799hupa&name=pegaaplication&editPegawai&nip=<?php echo $row['nik'];?>" data-toggle="tooltip" title="Edit Data"><span class="fa fa-edit"></span></a> 
                                                     <a href=
                                                     "config_config_cs/del-pegawai-con.php?id=<?php echo $row['nik']; ?>" data-toggle="tooltip" title="Hapus Data" onclick='/return konfirmasi("
                                                     Menghapus data <?php echo $row['nik'];?>")'><span class='fa fa-trash'></span></a>
@@ -106,6 +112,17 @@
                                             }
                                             ?>
                                         </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Cari</th>
+                                                <th>Cari</th>
+                                                <th>Cari</th>
+                                                <th>Cari</th>
+                                                <th>Cari</th>
+                                                <th>Cari</th>
+                                                <th>Cari</th>
+                                            </tr>
+                                        </tfoot>
                                     </table>
                                 </div>
 
@@ -151,6 +168,75 @@
         /****************************************
          *       Basic Table                   *
          ****************************************/
-        $('#zero_config').DataTable();
+         // DataTable
+         $('#zero_config tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="'+title+'" />' );
+    } );
+ 
+    var table = $('#zero_config').DataTable({
+        language: {
+                    "decimal":        "",
+                    "emptyTable":     "Data Tidak Tersedia Di Table",
+                    "info":           "Menampilkan _START_ Sampai _END_ Dari TOTAL Data",
+                    "infoEmpty":      "Menampilkan 0 Sampai 0 Dari 0 Data",
+                    "infoFiltered":   "(Dari Total _MAX_ Data)",
+                    "infoPostFix":    "",
+                    "thousands":      ",",
+                    "lengthMenu":     "Menampilkan _MENU_ Data",
+                    "loadingRecords": "Loading...",
+                    "processing":     "Memproses...",
+                    "search":         "Cari :",
+                    "zeroRecords":    "Tidak Ada Data Yang Sesuai",
+                    "paginate": {
+                        "first":      "Pertama",
+                        "last":       "Terakhir",
+                        "next":       "Selanjutnya",
+                        "previous":   "Sebelumnya"
+                    },
+                    "aria": {
+                        "sortAscending":  ": activate to sort column ascending",
+                        "sortDescending": ": activate to sort column descending"
+                    }
+                },
+        initComplete: function () {
+            this.api().columns([5]).every( function () {
+                var column = this;
+                var select = $('<select><option value=""></option></select>')
+                    .appendTo( $(column.footer()).empty() )
+                    .on( 'change', function () {
+                        var val = $.fn.dataTable.util.escapeRegex(
+                            $(this).val()
+                        );
+ 
+                        column
+                            .search( val ? '^'+val+'$' : '', true, false )
+                            .draw();
+                    } );
+ 
+                column.data().unique().sort().each( function ( d, j ) {
+                    select.append( '<option value="'+d+'">'+d+'</option>' )
+                } );
+            } );
+        }
+    });
+ 
+
+    
+    // Apply the search
+    table.columns().every( function () {
+        var that = this;
+ 
+        $( 'input', this.footer() ).on( 'keyup change', function () {
+            if ( that.search() !== this.value ) {
+                that
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } );
+
+
+
     </script>
 <?php include ('config_config_cs/fungsi_toast_notifikasi_tambah-pegawai.php'); ?>

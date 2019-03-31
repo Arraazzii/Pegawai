@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html dir="ltr">
 
 <head>
     <meta charset="utf-8">
@@ -44,7 +44,7 @@
                 <div id="loginform">
                     <div class="text-center p-t-20 p-b-20">
                         <span class="db"><img src="assets/images/logo.png" alt="logo" /></span>
-                    </div><br>
+                    </div>
                     <!-- Form -->
                     <form class="form-horizontal m-t-20" id="loginform" method="post" action="user/login-user.php">
                         <div class="row p-b-30">
@@ -64,7 +64,7 @@
                             </div>
                         </div>
                         <div class="row border-top border-secondary">
-                            <div class="col-12"><br>
+                            <div class="col-12">
                                 <div class="form-group">
                                     <div class="p-t-20">
                                         <button class="btn btn-info" id="to-recover" type="button"><i class="fas fa-user-plus m-r-5"></i> Register</button>

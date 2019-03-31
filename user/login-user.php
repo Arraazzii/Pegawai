@@ -13,11 +13,11 @@ $r      = mysqli_fetch_array($login);
 // Apabila username dan password ditemukan
 if ($ketemu > 0){
   session_start();
-  $_SESSION['kode']       = $r['id'];
-  $_SESSION['nip']        = $r['nip'];
-  $_SESSION['passuser']   = $r['password'];
-  $_SESSION['leveluser']  = $r['level_user'];
-  $_SESSION['status']     = $r['status'];
+  $_SESSION['kode']     = $r['id'];
+  $_SESSION['nip']     = $r['nip'];
+  $_SESSION['passuser']     = $r['password'];
+  $_SESSION['leveluser']    = $r['level_user'];
+  $_SESSION['status']    = $r['status'];
   $_SESSION['w_login']    = $r['w_login'];
   $id_user=$_SESSION['kode'];
 
