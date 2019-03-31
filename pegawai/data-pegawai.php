@@ -178,7 +178,7 @@
         language: {
                     "decimal":        "",
                     "emptyTable":     "Data Tidak Tersedia Di Table",
-                    "info":           "Menampilkan _START_ Sampai _END_ Dari TOTAL Data",
+                    "info":           "Menampilkan _START_ Sampai _END_ Dari _TOTAL_ Data",
                     "infoEmpty":      "Menampilkan 0 Sampai 0 Dari 0 Data",
                     "infoFiltered":   "(Dari Total _MAX_ Data)",
                     "infoPostFix":    "",

@@ -213,7 +213,9 @@
             <!-- ============================================================== -->
             <footer class="hidden-print">
               <div class="footer_fixed footer text-center">
-                2018 &copy All Rights Reserved by PT. Lumbung Riang Communication. Designed and Developed by <a href="https://lrcom.co.id" target="_blank">PT. Lumbung Riang Communication</a>.
+                <script>
+                document.write(new Date().getFullYear())
+                </script> &copy All Rights Reserved by PT. Lumbung Riang Communication. Designed and Developed by <a href="https://lrcom.co.id" target="_blank">PT. Lumbung Riang Communication</a>.
               </div>
               <div class="clearfix"></div>
             </footer>
