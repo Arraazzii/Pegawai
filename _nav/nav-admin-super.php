@@ -1,5 +1,5 @@
 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="?view=halaman-utama&id=9973838hupa&name=pegaaplication&dashboard" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-desktop-mac"></i><span class="hide-menu">Referensi </span></a>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-desktop-mac"></i><span class="hide-menu">Data Master </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item"><a href="?view=jabatan&mod=add&id=9973841hupa&name=pegaaplication&jabatan" class="waves-effect waves-dark sidebar-link"><i class="mdi mdi-tie"></i><span class="hide-menu"> Jabatan </span></a></li>
                                 <li class="sidebar-item"><a href="?view=divisi&id=9973842hupa&name=pegaaplication&divisi" class="sidebar-link"><i class="mdi mdi-pocket"></i><span class="hide-menu"> Divisi </span></a></li>

@@ -3,6 +3,13 @@
     <link rel="stylesheet" type="text/css" href="assets/extra-libs/multicheck/multicheck.css">
     <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
     <link href="assets/libs/toastr/build/toastr.min.css" rel="stylesheet">
+    <style type="text/css">
+        tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+    </style>
     
 
             <!-- Container fluid  -->
@@ -16,17 +23,6 @@
                                 <a href="?view=pinjaman&id=9973857hupa&name=pegaaplication&pinjaman">
                                     <h1 class="font-light text-white"><i class="mdi mdi-credit-card-plus"></i></h1>
                                     <h6 class="text-white">Pinjaman</h6>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-success text-center">
-                                <a href="">
-                                    <h1 class="font-light text-white"><i class="mdi mdi-refresh"></i></h1>
-                                    <h6 class="text-white">Refresh</h6>
                                 </a>
                             </div>
                         </div>

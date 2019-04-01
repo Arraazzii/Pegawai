@@ -28,17 +28,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-success text-center">
-                                <a href="?view=data-pegawai&id=9973850hupa&name=pegaaplication&pegawai">
-                                    <h1 class="font-light text-white"><i class="mdi mdi-refresh"></i></h1>
-                                    <h6 class="text-white">Refresh</h6>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                      <!-- Column -->
                     <div class="col-md-6 col-lg-2 col-xlg-3">
                         <div class="card card-hover">
@@ -235,8 +224,5 @@
             }
         } );
     } );
-
-
-
     </script>
 <?php include ('config_config_cs/fungsi_toast_notifikasi_tambah-pegawai.php'); ?>

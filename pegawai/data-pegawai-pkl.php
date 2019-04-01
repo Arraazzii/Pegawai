@@ -3,6 +3,13 @@
     <link rel="stylesheet" type="text/css" href="assets/extra-libs/multicheck/multicheck.css">
     <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
     <link href="assets/libs/toastr/build/toastr.min.css" rel="stylesheet">
+    <style type="text/css">
+        tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+    </style>
     
 
             <!-- Container fluid  -->
@@ -17,17 +24,6 @@
                                 <a href="?view=data-pegawai-pkl&id=9973850hupa&name=pegaaplication&pegawaiPKL">
                                     <h1 class="font-light text-white"><i class="mdi mdi-account-multiple"></i></h1>
                                     <h6 class="text-white">Pegawai</h6>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-success text-center">
-                                <a href="?view=data-pegawai-pkl&id=9973850hupa&name=pegaaplication&pegawaiPKL">
-                                    <h1 class="font-light text-white"><i class="mdi mdi-refresh"></i></h1>
-                                    <h6 class="text-white">Refresh</h6>
                                 </a>
                             </div>
                         </div>
@@ -105,6 +101,17 @@
                                             }
                                             ?>
                                         </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Cari</th>
+                                                <th>Cari</th>
+                                                <th>Cari</th>
+                                                <th>Cari</th>
+                                                <th>Cari</th>
+                                                <th>Cari</th>
+                                                <th>Cari</th>
+                                            </tr>
+                                        </tfoot>
                                     </table>
                                 </div>
 
@@ -150,6 +157,72 @@
         /****************************************
          *       Basic Table                   *
          ****************************************/
-        $('#zero_config').DataTable();
+         // DataTable
+         $('#zero_config tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="'+title+'" />' );
+    } );
+ 
+    var table = $('#zero_config').DataTable({
+        language: {
+                    "decimal":        "",
+                    "emptyTable":     "Data Tidak Tersedia Di Table",
+                    "info":           "Menampilkan _START_ Sampai _END_ Dari _TOTAL_ Data",
+                    "infoEmpty":      "Menampilkan 0 Sampai 0 Dari 0 Data",
+                    "infoFiltered":   "(Dari Total _MAX_ Data)",
+                    "infoPostFix":    "",
+                    "thousands":      ",",
+                    "lengthMenu":     "Menampilkan _MENU_ Data",
+                    "loadingRecords": "Loading...",
+                    "processing":     "Memproses...",
+                    "search":         "Cari :",
+                    "zeroRecords":    "Tidak Ada Data Yang Sesuai",
+                    "paginate": {
+                        "first":      "Pertama",
+                        "last":       "Terakhir",
+                        "next":       "Selanjutnya",
+                        "previous":   "Sebelumnya"
+                    },
+                    "aria": {
+                        "sortAscending":  ": activate to sort column ascending",
+                        "sortDescending": ": activate to sort column descending"
+                    }
+                },
+        initComplete: function () {
+            this.api().columns([5]).every( function () {
+                var column = this;
+                var select = $('<select><option value=""></option></select>')
+                    .appendTo( $(column.footer()).empty() )
+                    .on( 'change', function () {
+                        var val = $.fn.dataTable.util.escapeRegex(
+                            $(this).val()
+                        );
+ 
+                        column
+                            .search( val ? '^'+val+'$' : '', true, false )
+                            .draw();
+                    } );
+ 
+                column.data().unique().sort().each( function ( d, j ) {
+                    select.append( '<option value="'+d+'">'+d+'</option>' )
+                } );
+            } );
+        }
+    });
+ 
+
+    
+    // Apply the search
+    table.columns().every( function () {
+        var that = this;
+ 
+        $( 'input', this.footer() ).on( 'keyup change', function () {
+            if ( that.search() !== this.value ) {
+                that
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } );
     </script>
 <?php include ('config_config_cs/fungsi_toast_notifikasi_tambah-pegawai.php'); ?>
