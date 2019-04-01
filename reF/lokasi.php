@@ -85,8 +85,8 @@
                             <table class="table">
                                   <thead>
                                     <tr>
-                                      <th scope="col">#</th>
-                                      <th scope="col">Kode Lokasi</th>
+                                      <th scope="col">#</th><!-- 
+                                      <th scope="col">Kode Lokasi</th> -->
                                       <th scope="col">Nama Lokasi</th>
                                       <th scope="col">PJ Lokasi</th>
                                       <th scope="col">Aksi</th>
@@ -104,8 +104,8 @@
                                             while ($a_bag = mysqli_fetch_array($q_bagian)) { ?>
                                             <tr>
 
-                                                <td id='tengah'><?php echo $no; ?></td>
-                                                <td><?php echo $a_bag[0]; ?></td>
+                                                <td id='tengah'><?php echo $no; ?></td><!-- 
+                                                <td><?php echo $a_bag[0]; ?></td> -->
                                                 <td><?php echo $a_bag[1]; ?></td>
                                                 <td><?php echo $a_bag[2]; ?></td>  
                                                 <td id='tengah'>

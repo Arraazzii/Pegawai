@@ -1,7 +1,7 @@
 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="?view=halaman-utama&id=9973838hupa&name=pegaaplication&dashboard" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-desktop-mac"></i><span class="hide-menu">Referensi </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="?view=jabatan&mod=add&id=9973841hupa&name=pegaaplication&jabatan" class="sidebar-link"><i class="mdi mdi-tie"></i><span class="hide-menu"> Jabatan </span></a></li>
+                                <li class="sidebar-item"><a href="?view=jabatan&mod=add&id=9973841hupa&name=pegaaplication&jabatan" class="waves-effect waves-dark sidebar-link"><i class="mdi mdi-tie"></i><span class="hide-menu"> Jabatan </span></a></li>
                                 <li class="sidebar-item"><a href="?view=divisi&id=9973842hupa&name=pegaaplication&divisi" class="sidebar-link"><i class="mdi mdi-pocket"></i><span class="hide-menu"> Divisi </span></a></li>
                                 <li class="sidebar-item"><a href="?view=agama&id=9973843hupa&name=pegaaplication&agama" class="sidebar-link"><i class="mdi mdi-book-open"></i><span class="hide-menu"> Agama </span></a></li>
                                 <li class="sidebar-item"><a href="?view=absen&id=9973844hupa&name=pegaaplication&absen" class="sidebar-link"><i class="mdi mdi-human"></i><span class="hide-menu"> Absen </span></a></li>
@@ -16,10 +16,10 @@
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item"><a href="?view=data-pegawai&id=9973850hupa&name=pegaaplication&pegawai" class="sidebar-link"><i class="mdi mdi-account"></i><span class="hide-menu"> Daftar Pegawai </span></a></li>
                                 <li class="sidebar-item"><a href="?view=data-pegawai-pkl&id=9973850hupa&name=pegaaplication&pegawaiPKL" class="sidebar-link"><i class="mdi mdi-account-multiple"></i><span class="hide-menu"> Daftar PKL </span></a></li>
-                                <li class="sidebar-item"><a href="?view=data-pegawai-aktif&id=9973850hupa&name=pegaaplication&pegawaiAktif" class="sidebar-link"><i class="mdi mdi-account-check"></i><span class="hide-menu"> Daftar Pegawai Aktif </span></a></li>
+                                <!-- <li class="sidebar-item"><a href="?view=data-pegawai-aktif&id=9973850hupa&name=pegaaplication&pegawaiAktif" class="sidebar-link"><i class="mdi mdi-account-check"></i><span class="hide-menu"> Daftar Pegawai Aktif </span></a></li>
                                 <li class="sidebar-item"><a href="?view=data-pegawai-pkl-aktif&id=9973850hupa&name=pegaaplication&pegawaiPKLAktif" class="sidebar-link"><i class="mdi mdi-account-check"></i><span class="hide-menu"> Daftar PKL Aktif </span></a></li>
                                 <li class="sidebar-item"><a href="?view=data-pegawai-non-aktif&id=9973850hupa&name=pegaaplication&pegawaiNonAktif" class="sidebar-link"><i class="mdi mdi-account-off"></i><span class="hide-menu"> Daftar Pegawai Non Aktif </span></a></li>
-                                <li class="sidebar-item"><a href="?view=data-pegawai-pkl-non-aktif&id=9973850hupa&name=pegaaplication&pegawaiPKLNonAktif" class="sidebar-link"><i class="mdi mdi-account-off"></i><span class="hide-menu"> Daftar PKL Non Aktif </span></a></li>
+                                <li class="sidebar-item"><a href="?view=data-pegawai-pkl-non-aktif&id=9973850hupa&name=pegaaplication&pegawaiPKLNonAktif" class="sidebar-link"><i class="mdi mdi-account-off"></i><span class="hide-menu"> Daftar PKL Non Aktif </span></a></li> -->
                             </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Cuti dan Absensi </span></a>

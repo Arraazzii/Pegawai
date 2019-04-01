@@ -76,8 +76,8 @@
                             <table class="table">
                                   <thead>
                                     <tr>
-                                      <th scope="col">#</th>
-                                      <th scope="col">Kode Agama</th>
+                                      <th scope="col">#</th><!-- 
+                                      <th scope="col">Kode Agama</th> -->
                                       <th scope="col">Nama Agama</th>
                                       <th scope="col">Aksi</th>
                                     </tr>
@@ -88,13 +88,13 @@
                                         $j_data     = mysqli_num_rows($q_bagian);
 
                                         if ($j_data == 0) {
-                                            echo "<tr><td id='tengah' colspan='4' align='center'>-- Tidak Ada Data --</td></tr>";
+                                            echo "<tr><td id='tengah' colspan='3' align='center'>-- Tidak Ada Data --</td></tr>";
                                         } else {
                                             $no = 1;
                                             while ($a_bag = mysqli_fetch_array($q_bagian)) { ?>
 
-                                                <td id='tengah'><?php echo $no; ?></td>
-                                                <td><?php echo $a_bag[0]; ?></td>
+                                                <td id='tengah'><?php echo $no; ?></td><!-- 
+                                                <td><?php echo $a_bag[0]; ?></td> -->
                                                 <td><?php echo $a_bag[1]; ?></td>  
                                                 <td id='tengah'>
 
