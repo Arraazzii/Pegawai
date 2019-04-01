@@ -62,28 +62,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-success text-center">
-                                <a href="">
-                                    <h1 class="font-light text-white"><i class="mdi mdi-refresh"></i></h1>
-                                    <h6 class="text-white">Refresh</h6>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                     <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-warning text-center">
-                                <a href="?view=tambah-gaji-pegawai&id=9973865hupa&name=pegaaplication&tambahGajiPegawai">
-                                    <h1 class="font-light text-white"><i class="mdi mdi-pencil"></i></h1>
-                                    <h6 class="text-white">Tambah</h6>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="row">

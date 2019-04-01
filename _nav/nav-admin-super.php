@@ -10,6 +10,8 @@
                                 <li class="sidebar-item"><a href="?view=email-pegawai&id=9973848hupa&name=pegaaplication&emailPegawai" class="sidebar-link"><i class="mdi mdi-email"></i><span class="hide-menu"> Email Pegawai </span></a></li>
                                 <li class="sidebar-item"><a href="?view=bank&id=9973849hupa&name=pegaaplication&bank" class="sidebar-link"><i class="mdi mdi-credit-card"></i><span class="hide-menu"> Bank Transfer </span></a></li>
                                 <li class="sidebar-item"><a href="?view=lokasi&id=9973849hupa&name=pegaaplication&lokasi" class="sidebar-link"><i class="fas fa-location-arrow"></i><span class="hide-menu"> Lokasi </span></a></li>
+                                <li class="sidebar-item"><a href="?view=list-user&id=9973860hupa&name=pegaaplication&listUser" class="sidebar-link"><i class="mdi mdi-human-male-female"></i><span class="hide-menu"> List User </span></a></li>
+                                <li class="sidebar-item"><a href="?view=pengumuman&id=9973861hupa&name=pegaaplication&pengumuman" class="sidebar-link"><i class="mdi mdi-calendar-plus"></i><span class="hide-menu"> Pengumuman </span></a></li>
                             </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-clipboard-account"></i><span class="hide-menu">Pegawai </span></a>
@@ -45,12 +47,5 @@
                                 <li class="sidebar-item"><a href="?view=pengajuan-inventory-barang&id=9973861hupa&name=pegaaplication&pengajuanInventory" class="sidebar-link"><i class="mdi mdi-briefcase-check"></i><span class="hide-menu"> Pengajuan Inventori Barang </span></a></li>
                                 <li class="sidebar-item"><a href="?view=peminjaman-barang&id=9973861hupa&name=pegaaplication&peminjamanBarang" class="sidebar-link"><i class="fas fa-briefcase-medical"></i><span class="hide-menu"> Peminjaman Barang </span></a></li>
 
-                            </ul>
-                        </li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-bookmark"></i><span class="hide-menu">More Pages </span></a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="?view=list-user&id=9973860hupa&name=pegaaplication&listUser" class="sidebar-link"><i class="mdi mdi-human-male-female"></i><span class="hide-menu"> List User </span></a></li>
-                                <li class="sidebar-item"><a href="?view=pengumuman&id=9973861hupa&name=pegaaplication&pengumuman" class="sidebar-link"><i class="mdi mdi-calendar-plus"></i><span class="hide-menu"> Pengumuman </span></a></li>
-                                <li class="sidebar-item"><a href="?view=logout&id=9973840hupa&name=pegaaplication&Logout" class="sidebar-link"><i class="fa fa-power-off m-r-5 m-l-5"></i><span class="hide-menu"> Logout </span></a></li>
                             </ul>
                         </li>

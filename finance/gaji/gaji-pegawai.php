@@ -3,30 +3,12 @@
     <link rel="stylesheet" type="text/css" href="assets/extra-libs/multicheck/multicheck.css">
     <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
     <link href="assets/libs/toastr/build/toastr.min.css" rel="stylesheet">
-    <style type="text/css">
-        tfoot input {
-        width: 100%;
-        padding: 3px;
-        box-sizing: border-box;
-    }
-    </style>
     
 
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="container-fluid">
                 <div class="row">
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-2">
-                        <div class="card card-hover">
-                            <div class="box bg-cyan text-center">
-                                <a href="?view=gaji-pegawai&id=9973861hupa&name=pegaaplication&gajiPegawai">
-                                    <h1 class="font-light text-white"><i class="mdi mdi-credit-card"></i></h1>
-                                    <h6 class="text-white">Gaji</h6>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                      <!-- Column -->
                     <div class="col-md-6 col-lg-2 col-xlg-3">
                         <div class="card card-hover">
@@ -52,7 +34,6 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>NIP</th>
                                                 <th>Nama Pegawai</th>
                                                 <th>Email</th>
                                                 <th>Periode</th>
@@ -71,8 +52,7 @@
                                             ?>
                                             <tr>
                                                 <td><?php echo $no;?></td>
-                                                <td><?php echo $row['nik'];?></td>
-                                                <td><?php echo $row['nama'];?></td>
+                                                <td><?php echo $row['nik'];?> - <?php echo $row['nama'];?></td>
                                                 <td><?php echo $row['email_pegawai'].$row['domain'];?></td>
                                                 <td><?php echo bln_indo($row['tgl']);?></td>
                                                 <td><?php echo $row['nama_jabatan'];?></td>
@@ -229,66 +209,5 @@
             "bServerSide": true,
             "ajax": "serverside/response.php?view=gaji-pegawai",
         });
-        var table = $('#zero_config').DataTable({
-        language: {
-                    "decimal":        "",
-                    "emptyTable":     "Data Tidak Tersedia Di Table",
-                    "info":           "Menampilkan _START_ Sampai _END_ Dari _TOTAL_ Data",
-                    "infoEmpty":      "Menampilkan 0 Sampai 0 Dari 0 Data",
-                    "infoFiltered":   "(Dari Total _MAX_ Data)",
-                    "infoPostFix":    "",
-                    "thousands":      ",",
-                    "lengthMenu":     "Menampilkan _MENU_ Data",
-                    "loadingRecords": "Loading...",
-                    "processing":     "Memproses...",
-                    "search":         "Cari :",
-                    "zeroRecords":    "Tidak Ada Data Yang Sesuai",
-                    "paginate": {
-                        "first":      "Pertama",
-                        "last":       "Terakhir",
-                        "next":       "Selanjutnya",
-                        "previous":   "Sebelumnya"
-                    },
-                    "aria": {
-                        "sortAscending":  ": activate to sort column ascending",
-                        "sortDescending": ": activate to sort column descending"
-                    }
-                },
-        initComplete: function () {
-            this.api().columns([5]).every( function () {
-                var column = this;
-                var select = $('<select><option value=""></option></select>')
-                    .appendTo( $(column.footer()).empty() )
-                    .on( 'change', function () {
-                        var val = $.fn.dataTable.util.escapeRegex(
-                            $(this).val()
-                        );
- 
-                        column
-                            .search( val ? '^'+val+'$' : '', true, false )
-                            .draw();
-                    } );
- 
-                column.data().unique().sort().each( function ( d, j ) {
-                    select.append( '<option value="'+d+'">'+d+'</option>' )
-                } );
-            } );
-        }
-    });
- 
-
-    
-    // Apply the search
-    table.columns().every( function () {
-        var that = this;
- 
-        $( 'input', this.footer() ).on( 'keyup change', function () {
-            if ( that.search() !== this.value ) {
-                that
-                    .search( this.value )
-                    .draw();
-            }
-        } );
-    } );
     </script>
 <?php include ('config_config_cs/fungsi_toast_notifikasi_tambah_barang.php'); ?>

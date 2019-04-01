@@ -108,8 +108,7 @@ if ($tampil == 'inventory') {
         
         //masukan data ke array sesuai kolom table
         $ResultData[] = $no;
-        $ResultData[] = $value->nik;
-        $ResultData[] = $value->nama;
+        $ResultData[] = $value->nik .' - '. $value->nama;
         $ResultData[] = $value->email_pegawai . '@lrcom.co.id';
         $ResultData[] = bln_indo($value->tgl);
         $ResultData[] = $value->nama_jabatan;
@@ -186,8 +185,7 @@ if ($tampil == 'inventory') {
         
         //masukan data ke array sesuai kolom table
         $ResultData[] = $no;
-        $ResultData[] = $value->nik;
-        $ResultData[] = $value->nama;
+        $ResultData[] = $value->nik .' - '. $value->nama;
         $ResultData[] = 'Rp. '. number_format($value->besar_pinjaman, 0, ".", ".");
         $ResultData[] = 'x'.$value->term;
         // $ResultData[] = $value->status;

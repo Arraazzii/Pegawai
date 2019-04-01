@@ -76,28 +76,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-success text-center">
-                                <a href="">
-                                    <h1 class="font-light text-white"><i class="mdi mdi-refresh"></i></h1>
-                                    <h6 class="text-white">Refresh</h6>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                     <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-warning text-center">
-                                <a href="?view=add-pegawai&id=9973865hupa&name=pegaaplication&tambahPegawai">
-                                    <h1 class="font-light text-white"><i class="mdi mdi-pencil"></i></h1>
-                                    <h6 class="text-white">Tambah Pegawai</h6>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
@@ -447,6 +425,7 @@
                                           </div>
                                           <div class="form-action">
                                               <input type="submit" name="simpan" class="btn btn-primary pull-right" value="Simpan">
+                                              <a href="javascript:history.back()"><button type="button" class="btn btn-warning">BACK</button></a>
                                           </div>
                                       </div>
                                   </div>

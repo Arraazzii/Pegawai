@@ -7,6 +7,10 @@
     $level = $_SESSION['leveluser'];
     $sesi_nip = isset($_SESSION['nip']) ? $_SESSION['nip'] : NULL;
     if ($_SESSION['leveluser']=='ADMIN' ||$_SESSION['leveluser']=='SUPER ADMIN' ||$_SESSION['leveluser']=='USER'||$_SESSION['leveluser']=='ADMIN TEKNIS' ||$_SESSION['leveluser']=='ADMIN FINANCE' ||$_SESSION['leveluser']=='ADMIN GUDANG') {
+
+        $view = mysqli_query($connect, "SELECT * FROM tbl_pegawai, tbl_user_lr, tbl_file WHERE tbl_user_lr.nip = tbl_pegawai.nik AND tbl_pegawai.id_file = tbl_file.id_file AND tbl_user_lr.nip = '$sesi_nip'");
+                                                    
+            $row = mysqli_fetch_array($view);
 ?>
 <head>
     <meta charset="utf-8">
@@ -127,7 +131,11 @@
                         <!-- Messages -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31"></a>
+                            <?php if ($row['foto'] == NULL) { ?>
+                                <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/1.jpg" alt="user" class="rounded-circle" width="25px" height="25px"></a>
+                            <?php } else { ?>
+                                <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?php echo $row['foto']; ?>" alt="user" class="rounded-circle" width="25px" height="25px"></a>
+                            <?php } ?>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated">
                                 <a class="dropdown-item" href="?view=profil-pribadi&id=997386739hupa&name=pegaaplication&detailPegawai&nip=<?php echo $sesi_nip;?>"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
                                 <div class="dropdown-divider"></div>
@@ -214,8 +222,12 @@
             <footer class="hidden-print">
               <div class="footer_fixed footer text-center">
                 <script>
-                document.write(new Date().getFullYear())
-                </script> &copy All Rights Reserved by PT. Lumbung Riang Communication. Designed and Developed by <a href="https://lrcom.co.id" target="_blank">PT. Lumbung Riang Communication</a>.
+                document.write(new Date().getFullYear() - 1 )
+                </script>
+                -
+                <script>
+                document.write(new Date().getFullYear() )
+                </script> &copy All Rights Reserved <br> Designed and Developed by <a href="https://lrcom.co.id" target="_blank">PT. Lumbung Riang Communication</a>.
               </div>
               <div class="clearfix"></div>
             </footer>

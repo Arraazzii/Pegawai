@@ -82,10 +82,10 @@
                             <div class="card-body">
                                 <h5 class="card-title m-b-0">Data Lokasi</h5>
                             </div>
-                            <table class="table">
+                            <table id="zero_config" class="table table-striped table-bordered">
                                   <thead>
                                     <tr>
-                                      <th scope="col">#</th><!-- 
+                                      <th scope="col" width="7%">#</th><!-- 
                                       <th scope="col">Kode Lokasi</th> -->
                                       <th scope="col">Nama Lokasi</th>
                                       <th scope="col">PJ Lokasi</th>

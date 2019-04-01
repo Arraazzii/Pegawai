@@ -175,6 +175,7 @@
                                                   <center>
                                                       <a href="?view=edit-pegawai&id=997386799hupa&name=pegaaplication&editPegawai&nip=<?php echo $p_nip;?>" class="btn btn-outline-success" data-toggle="tooltip" title="Edit Data"><span class="fa fa-edit"></span></a>
                                                       <a href="pegawai/cv-pegawai.php?id=997386796hupa&name=pegaaplication&CVPegawai&nip=<?php echo $p_nip;?>" target="_blank" class="btn btn-outline-success" data-toggle="tooltip" title="Print CV"><span class="fas fa-print"></span></a>
+                                                      <a href="javascript:history.back()" class="btn btn-outline-success" data-toggle="tooltip" title="Back"><span class="fa fa-arrow-left"></span></a>
                                                   </center>
                                                 </div>
                                             </div>

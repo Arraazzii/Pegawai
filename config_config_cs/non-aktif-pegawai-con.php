@@ -9,12 +9,12 @@
 		
 		if ($q_reject_user) { ?>
 			<script type="text/javascript">
-				window.location="../?view=<?php echo $view; ?>&id=9973860hupa&name=pegaaplication&listUser&status=7";
+				window.location="../?view=<?php echo $view; ?>&id=9973860hupa&name=pegaaplication&pegawai&status=7";
 		    </script>
 		<?php 
 		} else { ?>
 			<script type="text/javascript">
-				window.location="../?view=<?php echo $view; ?>&id=9973860hupa&name=pegaaplication&listUser&status=10";
+				window.location="../?view=<?php echo $view; ?>&id=9973860hupa&name=pegaaplication&pegawai&status=10";
 		    </script>
 		<?php
 		}

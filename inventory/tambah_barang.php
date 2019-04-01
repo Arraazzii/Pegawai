@@ -21,6 +21,19 @@ include ('config_config_cs/fungsi_no_otomatis_inventory.php');
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <div class="row">
+                    <!-- Column -->
+                    <div class="col-md-6 col-lg-2 col-xlg-2">
+                        <div class="card card-hover">
+                            <div class="box bg-cyan text-center">
+                                <a href="?view=inventory-barang&id=9973861hupa&name=pegaaplication&Inventory">
+                                    <h1 class="font-light text-white"><i class="fas fa-briefcase"></i></h1>
+                                    <h6 class="text-white">Inventory</h6>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-md-12">
                         <div class="card">
                             <form class="form-horizontal children" method="POST" action="config_config_cs/tambah_barang_con.php">
@@ -97,6 +110,7 @@ include ('config_config_cs/fungsi_no_otomatis_inventory.php');
                                 <div class="border-top">
                                     <div class="card-body">
                                         <button type="submit" class="btn btn-primary" name="tambah">Submit</button>
+                                        <a href="javascript:history.back()"><button type="button" class="btn btn-warning">BACK</button></a>
                                     </div>
                                 </div>
                             </form>

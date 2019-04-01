@@ -80,10 +80,10 @@
                                 <h5 class="card-title m-b-0">Data Pengumuman</h5>
                             </div>
                             <div class="table-responsive">
-                                <table class="table">
-                                      <thead>
-                                        <tr>
-                                          <th scope="col">#</th>
+                                <table id="zero_config" class="table table-striped table-bordered">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col" width="7%">#</th>
                                           <th scope="col">Judul</th>
                                           <th scope="col">Tanggal Posting</th>
                                           <th scope="col">Aksi</th>

@@ -16,28 +16,6 @@
                 </div>
 
                 <div class="row">
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-2">
-                        <div class="card card-hover">
-                            <div class="box bg-cyan text-center">
-                                <a href="?view=inventory-barang&id=9973861hupa&name=pegaaplication&Inventory">
-                                    <h1 class="font-light text-white"><i class="fas fa-briefcase"></i></h1>
-                                    <h6 class="text-white">Inventory</h6>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-success text-center">
-                                <a href="?view=inventory-barang&id=9973850hupa&name=pegaaplication&inventoryBarang">
-                                    <h1 class="font-light text-white"><i class="mdi mdi-refresh"></i></h1>
-                                    <h6 class="text-white">Refresh</h6>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                      <!-- Column -->
                     <div class="col-md-6 col-lg-2 col-xlg-3">
                         <div class="card card-hover">

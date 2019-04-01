@@ -115,8 +115,15 @@
                                     <?php
                                         if ($level=='SUPER ADMIN') { ?>
                                             <li class="el-item"><a class="btn default btn-outline el-link" data-toggle="modal" title="Edit Data" data-target="#myModal<?php echo $row['nip'];?>" href="#<?php echo $row['nip'];?>"><i class="mdi mdi-link"></i></a></li>
+                                        <?php if ($row['kode_approve'] == 2) { ?>
                                             <li class="el-item"><a class="btn default btn-outline el-link" title="Approve User" href="config_config_cs/approve-user.php?id=<?php echo $row['nip']; ?>" data-toggle="tooltip" onclick='/return konfirmasi("Approve User <?php echo $row['nip'];?>")'><i class="mdi mdi-check"></i></a></li>
-                                            <li class="el-item"><a class="btn default btn-outline el-link" data-toggle="tooltip" href="config_config_cs/reject-user.php?id=<?php echo $row['nip']; ?>" onclick='/return konfirmasi("Reject User User <?php echo $row['nip'];?>")'><i class="mdi mdi-close"></i></a></li>
+                                        <?php } else if ($row['kode_approve'] == 1){ ?>
+                                            <li class="el-item"><a class="btn default btn-outline el-link" data-toggle="tooltip" title="Reject User" href="config_config_cs/reject-user.php?id=<?php echo $row['nip']; ?>" onclick='/return konfirmasi("Reject User User <?php echo $row['nip'];?>")'><i class="mdi mdi-close"></i></a></li>
+                                        <?php } else { ?>
+                                            <li class="el-item"><a class="btn default btn-outline el-link" data-toggle="modal" title="Edit Data" data-target="#myModal<?php echo $row['nip'];?>" href="#<?php echo $row['nip'];?>"><i class="mdi mdi-link"></i></a></li>
+                                                <li class="el-item"><a class="btn default btn-outline el-link" title="Approve User" href="config_config_cs/approve-user.php?id=<?php echo $row['nip']; ?>" data-toggle="tooltip" onclick='/return konfirmasi("Approve User <?php echo $row['nip'];?>")'><i class="mdi mdi-check"></i></a></li>
+                                                <li class="el-item"><a class="btn default btn-outline el-link" data-toggle="tooltip" href="config_config_cs/reject-user.php?id=<?php echo $row['nip']; ?>" onclick='/return konfirmasi("Reject User User <?php echo $row['nip'];?>")'><i class="mdi mdi-close"></i></a></li>
+                                        <?php } ?>
                                     <?php        
                                         } elseif ($level=='ADMIN') { ?>
                                             <?php if ($row['level_user'] == 'SUPER ADMIN') { ?>
@@ -124,8 +131,15 @@
                                             <?php    
                                             } else { ?>
                                                 <li class="el-item"><a class="btn default btn-outline el-link" data-toggle="modal" title="Edit Data" data-target="#myModal<?php echo $row['nip'];?>" href="#<?php echo $row['nip'];?>"><i class="mdi mdi-link"></i></a></li>
-                                                <li class="el-item"><a class="btn default btn-outline el-link" title="Approve User" href="config_config_cs/approve-user.php?id=<?php echo $row['nip']; ?>" data-toggle="tooltip" onclick='/return konfirmasi("Approve User <?php echo $row['nip'];?>")'><i class="mdi mdi-check"></i></a></li>
-                                                <li class="el-item"><a class="btn default btn-outline el-link" data-toggle="tooltip" href="config_config_cs/reject-user.php?id=<?php echo $row['nip']; ?>" onclick='/return konfirmasi("Reject User User <?php echo $row['nip'];?>")'><i class="mdi mdi-close"></i></a></li>
+                                                <?php if ($row['kode_approve'] == 2) { ?>
+                                                    <li class="el-item"><a class="btn default btn-outline el-link" title="Approve User" href="config_config_cs/approve-user.php?id=<?php echo $row['nip']; ?>" data-toggle="tooltip" onclick='/return konfirmasi("Approve User <?php echo $row['nip'];?>")'><i class="mdi mdi-check"></i></a></li>
+                                                <?php } else if ($row['kode_approve'] == 1){ ?>
+                                                    <li class="el-item"><a class="btn default btn-outline el-link" data-toggle="tooltip" title="Reject User" href="config_config_cs/reject-user.php?id=<?php echo $row['nip']; ?>" onclick='/return konfirmasi("Reject User User <?php echo $row['nip'];?>")'><i class="mdi mdi-close"></i></a></li>
+                                                <?php } else { ?>
+                                                    <li class="el-item"><a class="btn default btn-outline el-link" data-toggle="modal" title="Edit Data" data-target="#myModal<?php echo $row['nip'];?>" href="#<?php echo $row['nip'];?>"><i class="mdi mdi-link"></i></a></li>
+                                                        <li class="el-item"><a class="btn default btn-outline el-link" title="Approve User" href="config_config_cs/approve-user.php?id=<?php echo $row['nip']; ?>" data-toggle="tooltip" onclick='/return konfirmasi("Approve User <?php echo $row['nip'];?>")'><i class="mdi mdi-check"></i></a></li>
+                                                        <li class="el-item"><a class="btn default btn-outline el-link" data-toggle="tooltip" href="config_config_cs/reject-user.php?id=<?php echo $row['nip']; ?>" onclick='/return konfirmasi("Reject User User <?php echo $row['nip'];?>")'><i class="mdi mdi-close"></i></a></li>
+                                                <?php } ?>
                                             <?php    
                                             }
                                             ?>
@@ -235,8 +249,15 @@
                                         <?php
                                         if ($level=='SUPER ADMIN') { ?>
                                             <li class="el-item"><a class="btn default btn-outline el-link" data-toggle="modal" title="Edit Data" data-target="#myModalFoto<?php echo $row['nip'];?>" href="#<?php echo $row['nip'];?>"><i class="mdi mdi-link"></i></a></li>
-                                            <li class="el-item"><a class="btn default btn-outline el-link" title="Approve User" href="config_config_cs/approve-user.php?id=<?php echo $row['nip']; ?>" data-toggle="tooltip" onclick='/return konfirmasi("Approve User <?php echo $row['nip'];?>")'><i class="mdi mdi-check"></i></a></li>
-                                            <li class="el-item"><a class="btn default btn-outline el-link" data-toggle="tooltip" href="config_config_cs/reject-user.php?id=<?php echo $row['nip']; ?>" onclick='/return konfirmasi("Reject User User <?php echo $row['nip'];?>")'><i class="mdi mdi-close"></i></a></li>
+                                            <?php if ($row['kode_approve'] == 2) { ?>
+                                                <li class="el-item"><a class="btn default btn-outline el-link" title="Approve User" href="config_config_cs/approve-user.php?id=<?php echo $row['nip']; ?>" data-toggle="tooltip" onclick='/return konfirmasi("Approve User <?php echo $row['nip'];?>")'><i class="mdi mdi-check"></i></a></li>
+                                            <?php } else if ($row['kode_approve'] == 1){ ?>
+                                                <li class="el-item"><a class="btn default btn-outline el-link" data-toggle="tooltip" title="Reject User" href="config_config_cs/reject-user.php?id=<?php echo $row['nip']; ?>" onclick='/return konfirmasi("Reject User User <?php echo $row['nip'];?>")'><i class="mdi mdi-close"></i></a></li>
+                                            <?php } else { ?>
+                                                <li class="el-item"><a class="btn default btn-outline el-link" data-toggle="modal" title="Edit Data" data-target="#myModal<?php echo $row['nip'];?>" href="#<?php echo $row['nip'];?>"><i class="mdi mdi-link"></i></a></li>
+                                                <li class="el-item"><a class="btn default btn-outline el-link" title="Approve User" href="config_config_cs/approve-user.php?id=<?php echo $row['nip']; ?>" data-toggle="tooltip" onclick='/return konfirmasi("Approve User <?php echo $row['nip'];?>")'><i class="mdi mdi-check"></i></a></li>
+                                                <li class="el-item"><a class="btn default btn-outline el-link" data-toggle="tooltip" href="config_config_cs/reject-user.php?id=<?php echo $row['nip']; ?>" onclick='/return konfirmasi("Reject User User <?php echo $row['nip'];?>")'><i class="mdi mdi-close"></i></a></li>
+                                                <?php } ?>
                                     <?php        
                                         } elseif ($level=='ADMIN') { ?>
                                             <?php if ($row['level_user'] == 'SUPER ADMIN') { ?>

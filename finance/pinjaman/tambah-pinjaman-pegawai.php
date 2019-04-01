@@ -20,37 +20,14 @@
                     <div class="col-md-6 col-lg-2 col-xlg-2">
                         <div class="card card-hover">
                             <div class="box bg-cyan text-center">
-                                <a href="?view=gaji-pegawai&id=9973861hupa&name=pegaaplication&gajiPegawai">
-                                    <h1 class="font-light text-white"><i class="mdi mdi-credit-card"></i></h1>
-                                    <h6 class="text-white">Gaji</h6>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-success text-center">
-                                <a href="">
-                                    <h1 class="font-light text-white"><i class="mdi mdi-refresh"></i></h1>
-                                    <h6 class="text-white">Refresh</h6>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                     <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-warning text-center">
-                                <a href="?view=tambah-gaji-pegawai&id=9973865hupa&name=pegaaplication&tambahGajiPegawai">
-                                    <h1 class="font-light text-white"><i class="mdi mdi-pencil"></i></h1>
-                                    <h6 class="text-white">Tambah</h6>
+                                <a href="?view=pinjaman&id=9973857hupa&name=pegaaplication&pinjaman">
+                                    <h1 class="font-light text-white"><i class="mdi mdi-credit-card-plus"></i></h1>
+                                    <h6 class="text-white">Pinjaman</h6>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
