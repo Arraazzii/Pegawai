@@ -47,7 +47,7 @@
 			
 			if ($j_cek_ganda > 0) { ?>
 				<script type="text/javascript">
-					window.location="../../kepegawaian?view=add-pegawai&mod=add&id=9973865hupa&name=pegaaplication&tambahPegawai&status=6";
+					window.location="../?view=add-pegawai&mod=add&id=9973865hupa&name=pegaaplication&tambahPegawai&status=6";
 				</script>
 			<?php
 			} else {
@@ -74,13 +74,13 @@
 						$q_tambah_about		= mysqli_query($connect, "INSERT INTO tbl_about_me (nip) VALUES ('$p_nip')"); ?>
 						
 						<script type="text/javascript">
-							window.location="../../kepegawaian?view=add-pegawai&mod=add&id=9973865hupa&name=pegaaplication&tambahPegawai&status=1";
+							window.location="../?view=add-pegawai&mod=add&id=9973865hupa&name=pegaaplication&tambahPegawai&status=1";
 				        </script>
 				<?php 
 					} else { ?>
 						<script type="text/javascript">
-						window.location="../?view=add-pegawai&mod=add&id=9973865hupa&name=pegaaplication&tambahPegawai&status=4";
-			        </script>
+							window.location="../?view=add-pegawai&mod=add&id=9973865hupa&name=pegaaplication&tambahPegawai&status=4";
+				        </script>
 				<?php
 					}
 				}

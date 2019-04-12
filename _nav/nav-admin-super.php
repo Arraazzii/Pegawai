@@ -37,8 +37,8 @@
                                 <li class="sidebar-item"><a href="?view=lembur&id=9973855hupa&name=pegaaplication&uangLembur" class="sidebar-link"><i class="mdi mdi-clock"></i><span class="hide-menu"> Lembur </span></a></li>
                                 <li class="sidebar-item"><a href="?view=pajak&id=9973856hupa&name=pegaaplication&Pajak" class="sidebar-link"><i class="mdi mdi-credit-card-off"></i><span class="hide-menu"> Pajak </span></a></li>
                                 <li class="sidebar-item"><a href="?view=pinjaman&id=9973857hupa&name=pegaaplication&pinjaman" class="sidebar-link"><i class="mdi mdi-credit-card-plus"></i><span class="hide-menu"> Pinjaman </span></a></li>
-                                <li class="sidebar-item"><a href="?view=potongan&id=9973858hupa&name=pegaaplication&potongan" class="sidebar-link"><i class="mdi mdi-credit-card-off"></i><span class="hide-menu"> Potongan </span></a></li>
-                                <li class="sidebar-item"><a href="?view=check-out&id=9973859hupa&name=pegaaplication&prosesPayroll" class="sidebar-link"><i class="mdi mdi-cash-multiple"></i><span class="hide-menu"> Proses Payroll </span></a></li>
+                                <li class="sidebar-item"><!-- <a href="?view=potongan&id=9973858hupa&name=pegaaplication&potongan" class="sidebar-link"><i class="mdi mdi-credit-card-off"></i><span class="hide-menu"> Potongan </span></a></li>
+                                <li class="sidebar-item"><a href="?view=check-out&id=9973859hupa&name=pegaaplication&prosesPayroll" class="sidebar-link"><i class="mdi mdi-cash-multiple"></i><span class="hide-menu"> Proses Payroll </span></a></li> -->
                             </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-briefcase"></i><span class="hide-menu">Inventory </span></a>

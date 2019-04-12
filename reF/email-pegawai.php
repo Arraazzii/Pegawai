@@ -81,7 +81,7 @@
                             <table id="zero_config" class="table table-striped table-bordered">
                                   <thead>
                                     <tr>
-                                      <th scope="col" width="7%">#</th>
+                                      <th scope="col" width="7%">No.</th>
                                       <th scope="col">NIP Pegawai</th>
                                       <th scope="col">Email Pegawai</th>
                                       <th scope="col">Aksi</th>

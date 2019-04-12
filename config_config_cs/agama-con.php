@@ -8,7 +8,7 @@
 		$q_tambah_agama	= mysqli_query($connect, "INSERT INTO tbl_data_agama VALUES ('$p_kode_agama','$p_nama_agama')");
 			if ($q_tambah_agama) { ?>
 				<script type="text/javascript">
-					window.location="../../kepegawaian?view=agama&mod=add&id=9973843hupa&name=pegaaplication&agama&status=1";
+					window.location="../?view=agama&mod=add&id=9973843hupa&name=pegaaplication&agama&status=1";
 		        </script>
 		<?php 
 			} else { ?>

@@ -8,13 +8,13 @@
 		$q_tambah_jabatan	= mysqli_query($connect, "INSERT INTO tbl_data_jabatan VALUES ('$p_kode_jabatan','$p_nama_jabatan')");
 			if ($q_tambah_jabatan) { ?>
 				<script type="text/javascript">
-					window.location="../../kepegawaian?view=jabatan&mod=add&id=9973841hupa&name=pegaaplication&jabatan&status=1";
+					window.location="../?view=jabatan&mod=add&id=9973841hupa&name=pegaaplication&jabatan&status=1";
 		        </script>
 		<?php 
 			} else { ?>
 				<script type="text/javascript">
-				window.location="../?view=jabatan&mod=add&id=9973841hupa&name=pegaaplication&jabatan&status=4";
-	        </script>
+					window.location="../?view=jabatan&mod=add&id=9973841hupa&name=pegaaplication&jabatan&status=4";
+		        </script>	
 		<?php
 			}
 			

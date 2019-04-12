@@ -65,102 +65,17 @@
                                                     <?php endif ?>
                                                         
                                                 </td>
-                                                <td><a title="Lihat Detail" data-toggle="tooltip" href="?view=detail-gaji-pegawai&id=997386798hupa&name=pegaaplication&detailGajiPegawai&id=<?= $row['id']; ?>">
+                                                <td><a title="Lihat Detail" data-target="#myModalDetail<?= $row['id']; ?>" data-toggle="modal" href="#<?= $row['id']; ?>">
                                                     <span class="fa fa-list"></span>
                                                 </a> |
-                                                <a href="?view=edit-gaji-pegawai&id=997386798hupa&name=pegaaplication&editGajiPegawai&id=<?= $row['id']; ?>" data-toggle="tooltip" title="Edit Data">
+                                                <a href="?view=edit-pinjaman&id=997386798hupa&name=pegaaplication&editPinjamanPegawai&id=<?= $row['id']; ?>" data-toggle="tooltip" title="Edit Data">
                                                     <span class="fa fa-edit"></span>
                                                 </a> |
-                                                <a href="config_config_cs/del-gaji-pegawai-con.php?id=<?= $row['id']; ?>" data-toggle="tooltip" title="Hapus Data">
+                                                <a href="config_config_cs/del-pinjaman-pegawai-con.php?id=<?= $row['id']; ?>" data-toggle="tooltip" title="Hapus Data" onClick="return confirm('Anda Yakin Ingin Menghapus Data <?php echo $row['nama'];?> ?')">
                                                     <span class="fa fa-trash"></span>
                                                 </a>
                                                 </td>
                                             </tr>
-
-                            <div class="modal fade" id="myModal<?php echo $row['id']; ?>" tabindex="-1" role="modal" aria-labelledby="exampleModalLabel" aria-hidden="true ">
-                                <div class="modal-dialog" role="document ">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Tambah Catatan Gaji</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true ">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form class="form-horizontal" action="config_config_cs/add-note-gaji-con.php" method="post">
-                                                <div class="card-body">
-                                                    <input type="hidden" name="id" class="form-control" id="lname" value="<?= $row['id']; ?>">
-                                                    <div class="form-group row">
-                                                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Catatan</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" name="note" class="form-control" id="lname" placeholder="Enter Note" value="" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="border-top">
-                                                        <div class="card-body">
-                                                            <input type="submit" name="simpan_note" class="btn btn-primary" value="SIMPAN">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="modal fade" id="myModalEmail<?= $row['id']; ?>" tabindex="-1" role="modal" aria-labelledby="exampleModalLabel" aria-hidden="true ">
-                                    <div class="modal-dialog modal-lg" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Kirim Email Gaji Pegawai</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true ">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form class="form-horizontal" action="config_config_cs/update-note-gaji-con.php" method="post" id="tambah">
-                                                <div class="card-body">
-                                                    <input type="hidden" name="id" class="form-control" id="lname" value="<?= $row['id']; ?>">
-                                                    <div class="form-group row">
-                                                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Email Pegawai</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" name="email" class="form-control" id="lname" placeholder="Email Pegawai" value="<?= $row['email_pegawai']; ?><?= $row['domain']; ?>" readonly />
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Judul</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" name="judul" class="form-control" id="lname" placeholder="Judul Email" value="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Isi Pesan </label>
-                                                        <div class="col-sm-9">
-                                                            <textarea id="editor<?php echo $row['id']; ?>" name="editor2" rows="10" cols="100"></textarea>
-                                                        </div>
-                                                    </div>
-                                                    <div class="border-top">
-                                                        <div class="card-body">
-                                                            <input type="submit" name="tambah" class="btn btn-primary" id="submit" value="TAMBAH">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                                <script src="assets/libs/ckeditor_standard/ckeditor.js"></script>
-                                <script type="text/javascript">
-                                    if ( typeof CKEDITOR == 'undefined' ) {
-                                        document.write(
-                                            'CKEditor not found');
-                                    } else {
-                                        var editor = CKEDITOR.replace( 'editor<?php echo $row['id']; ?>' );               
-                                        CKFinder.setupCKEditor( editor, '' );            
-                                    }
-                                </script>
-
                                             <?php
                                                 $no++;
                                             }
@@ -177,6 +92,113 @@
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
 
+<?php
+                                        
+    $view = mysqli_query($connect, "SELECT * FROM tbl_pinjaman JOIN tbl_pegawai ON tbl_pegawai.nik = tbl_pinjaman.nik ");
+    $no =1;
+    while ($row = mysqli_fetch_array($view)) {
+                                                
+?>
+
+
+<div class="modal fade" id="myModalDetail<?php echo $row['id']; ?>" tabindex="-1" role="modal" aria-labelledby="exampleModalLabel" aria-hidden="true ">
+    <div class="modal-dialog modal-lg" role="document ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detail Pinjaman</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true ">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="table-responsive">
+                                                <div class="col-md-12">
+                                                    <table class="table">
+                                                        <tr>
+                                                            <th style="width:30%">Nama Pegawai</th>
+                                                            <td><?= $row['nama']; ?></td><td></td>
+                                                            <th style="width:30%">Besar Pinjaman</th>
+                                                            <td><?php echo 'Rp. '.number_format($row['besar_pinjaman'], 0, ".", ".");?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th style="width:30%">Dari</th>
+                                                            <td><?= tgl_indo($row['dari']); ?></td><td></td>
+                                                            <th style="width:30%">Sampai</th>
+                                                            <td><?= tgl_indo($row['sampai']); ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th style="width:30%">Term</th>
+                                                            <td><?= 'x'.$row['term']; ?></td><td></td>
+                                                            <th style="width:30%">Status</th>
+                                                            <td>
+                                                                <?php if ($row['status'] == 'APPROVED'): ?>
+                                                                    <span class="badge badge-success"> APPROVED </span>
+                                                                <?php elseif ($row['status'] == 'PENDING'): ?>
+                                                                    <span class="badge badge-warning"> PENDING </span>
+                                                                <?php else: ?>
+                                                                    <span class="badge badge-danger"> REJECTED </span>
+                                                                <?php endif ?>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th style="width:30%">Keperluan</th>
+                                                            <td><?= $row['keperluan']; ?></td><td></td>
+                                                            <th style="width:30%">Notes</th>
+                                                            <td><?= $row['notes']; ?></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>    
+                                    </div>
+
+                <div class="col-md-12">
+                    <h4>
+                        <center>Detail Cicilan</center>
+                    </h4><br/>
+                </div> 
+
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <tr>
+                                <th>No.</th>
+                                <th>Besar Cicilan</th>
+                                <th>Tgl Bayar</th>
+                                <th>Keterangan</th>
+                            </tr>
+                            <?php
+                                $kode_cicilan = $row['kode_cicilan'];
+
+                                $sql = mysqli_query($connect, "SELECT * FROM tbl_pinjaman_detail WHERE kode_cicilan='$kode_cicilan' ORDER BY keterangan DESC") or die(mysqli_error($connect));
+                                
+                                $no =1;
+                                while ($row2 = mysqli_fetch_array($sql)) {
+                            ?>
+                            <tr>
+                                <td><?= $no; ?></td>
+                                <td><?php echo 'Rp. '.number_format($row2['besaran'], 0, ".", "."); ?></td>
+                                <td><?= tgl_indo($row2['tgl_bayar']); ?></td>
+                                <td><?= $row2['keterangan']; ?></td>
+                            </tr>
+
+                            <?php 
+                                    $no++;
+                                }
+                            ?>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php
+        $no++;
+    }
+?>
 
                         
     <!-- All Jquery -->

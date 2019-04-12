@@ -60,7 +60,7 @@
 				$q_edit_tabungan	= mysqli_query($connect, "UPDATE tbl_tabungan set bank = '$p_nama_bank', no_rekening = '$p_no_rekening' WHERE id_tabungan = '$p_id_tabungan' "); ?>
 						
 				<script type="text/javascript">
-					window.location="../../kepegawaian?view=data-pegawai&id=997386750hupa&name=pegaaplication&dataPegawai?&status=1";
+					window.location="../?view=data-pegawai&id=997386750hupa&name=pegaaplication&dataPegawai?&status=1";
 		        </script>
 		<?php 
 			} else { ?>

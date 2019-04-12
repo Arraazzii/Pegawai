@@ -1,6 +1,40 @@
 <?php 
 include ('config_config_cs/fungsi_no_otomatis_pinjaman.php');
 ?>
+
+<?php
+    $get_id        = isset($_GET['id']) ? $_GET['id'] : NULL;
+
+
+    $data = mysqli_query($connect, "SELECT * FROM tbl_pinjaman JOIN tbl_pinjaman_detail ON tbl_pinjaman.kode_cicilan = tbl_pinjaman_detail.kode_cicilan JOIN tbl_pegawai ON tbl_pegawai.nik = tbl_pinjaman.nik WHERE tbl_pinjaman.id = '$get_id'");
+
+    if ($data) {
+        while($b = mysqli_fetch_array($data)) {   
+            $id = $b['id'];
+
+            $nik = $b['nik'];
+            $jumlah_pinjaman = $b['besar_pinjaman'];
+            $term = $b['term'];
+            $dari = $b['dari'];
+            $sampai = $b['sampai'];
+            $keperluan = $b['keperluan'];
+            $notes = $b['notes'];
+            $kode_cicilan = $b['kode_cicilan'];
+
+            $besaran = $b['besaran'];
+            
+        }
+
+        $data1 = mysqli_query($connect, "SELECT keterangan FROM tbl_pinjaman_detail WHERE kode_cicilan = '$kode_cicilan' AND keterangan='LUNAS'");
+        $ketemu = mysqli_num_rows($data1);
+        $r      = mysqli_fetch_array($data1);
+            
+    } else {
+        echo mysqli_error($connect);
+    }
+    
+?>
+
     <link rel="stylesheet" type="text/css" href="assets/libs/select2/dist/css/select2.min.css">
     <link rel="stylesheet" type="text/css" href="assets/libs/jquery-minicolors/jquery.minicolors.css">
     <link rel="stylesheet" type="text/css" href="assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
@@ -34,21 +68,32 @@ include ('config_config_cs/fungsi_no_otomatis_pinjaman.php');
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            <form class="form-horizontal children" method="POST" action="config_config_cs/tambah-pinjaman-con.php">
-                                <div class="
-                                card-body">
-                                    <h4 class="card-title">Tambah Pinjaman Pegawai</h4><hr>
+                            <form class="form-horizontal children" method="POST" action="config_config_cs/edit-pinjaman-con.php">
+                                <div class="card-body">
+                                    <h4 class="card-title">Edit Pinjaman Pegawai</h4><hr>
                                     <div class="form-group col-md-12">
-                                        <input type="hidden" name="kode_cicilan" value="<?php echo $newsch;?>">
+                                        <input type="hidden" name="kode_cicilan" value="<?= $kode_cicilan;?>">
+                                        <input type="hidden" name="id" value="<?php echo $get_id;?>">
+                                        <input type="hidden" name="term_lama" value="<?php echo $term;?>">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="control-label">Nomor Induk Pegawai</label>
-                                                <input maxlength="100" name="nik" type="text" id="nik" required="required" class="form-control" placeholder="NIP Pegawai"/>
+                                                <?php if ($ketemu > 0){ ?>
+                                                    <input maxlength="100" name="nik" type="text" id="nik" required="required" class="form-control" placeholder="NIP Pegawai" value="<?= $nik; ?>" readonly/>
+                                                </select>
+                                                <?php } else { ?>
+                                                    <input maxlength="100" name="nik" type="text" id="nik" required="required" class="form-control" placeholder="NIP Pegawai" value="<?= $nik; ?>" />
+                                                <?php } ?>
                                                 <span id="pesan"></span>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="control-label">Jumlah Pinjaman</label>
-                                                <input type="number" name="jumlah_pinjaman" id="jumlah_pinjaman" class="form-control" onkeyup="hitung();" required="" />
+                                                <?php if ($ketemu > 0){ ?>
+                                                    <input type="number" name="jumlah_pinjaman" id="jumlah_pinjaman" class="form-control" value="<?= $jumlah_pinjaman; ?>" onkeyup="hitung();" required="" readonly/>
+                                                </select>
+                                                <?php } else { ?>
+                                                    <input type="number" name="jumlah_pinjaman" id="jumlah_pinjaman" class="form-control" value="<?= $jumlah_pinjaman; ?>" onkeyup="hitung();" required="" />
+                                                <?php } ?>
                                             </div>
                                         </div>
                                     </div>
@@ -56,15 +101,27 @@ include ('config_config_cs/fungsi_no_otomatis_pinjaman.php');
                                         <div class="row">    
                                             <div class="col-md-6">
                                                 <label class="control-label">Term</label>
-                                                <select name="term" class="form-control" id="term" onchange="hitung();">
+                                                <?php if ($ketemu > 0){ ?>
+                                                    <select name="term" class="form-control" id="term" onchange="hitung();" readonly />
                                                     <option>Term</option>
-                                                    <option value="2">2x</option>
-                                                    <option value="3">3x</option>
-                                                    <option value="4">4x</option>
-                                                    <option value="5">5x</option>
-                                                    <option value="6">6x</option>
-                                                    <option value="12">12x</option>
+                                                    <option value="2" <?php if($term == 2){ echo 'selected'; } ?>>2x</option>
+                                                    <option value="3" <?php if($term == 3){ echo 'selected'; } ?>>3x</option>
+                                                    <option value="4" <?php if($term == 4){ echo 'selected'; } ?>>4x</option>
+                                                    <option value="5" <?php if($term == 5){ echo 'selected'; } ?>>5x</option>
+                                                    <option value="6" <?php if($term == 6){ echo 'selected'; } ?>>6x</option>
+                                                    <option value="12" <?php if($term == 12){ echo 'selected'; } ?>>12x</option>
                                                 </select>
+                                                <?php } else { ?>
+                                                    <select name="term" class="form-control" id="term" onchange="hitung();">
+                                                    <option>Term</option>
+                                                    <option value="2" <?php if($term == 2){ echo 'selected'; } ?>>2x</option>
+                                                    <option value="3" <?php if($term == 3){ echo 'selected'; } ?>>3x</option>
+                                                    <option value="4" <?php if($term == 4){ echo 'selected'; } ?>>4x</option>
+                                                    <option value="5" <?php if($term == 5){ echo 'selected'; } ?>>5x</option>
+                                                    <option value="6" <?php if($term == 6){ echo 'selected'; } ?>>6x</option>
+                                                    <option value="12" <?php if($term == 12){ echo 'selected'; } ?>>12x</option>
+                                                </select>
+                                                <?php } ?>
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="name">Total Cicilan /bln</label>
@@ -77,7 +134,7 @@ include ('config_config_cs/fungsi_no_otomatis_pinjaman.php');
                                             <div class="col-md-6">
                                                 <label class="control-label">Dari</label>
                                                 <div class="input-group">
-                                                    <input type="text" name="dari" class="form-control" id="datepicker-autoclose1" placeholder="yyyy-mm-dd" required="">
+                                                    <input type="text" name="dari" class="form-control" id="datepicker-autoclose1" placeholder="yyyy-mm-dd" value="<?= $dari; ?>" required="">
                                                     <div class="input-group-append">
                                                         <span class="input-group-text"><i class="fa fa-calendar"></i></span>
                                                     </div>
@@ -86,7 +143,7 @@ include ('config_config_cs/fungsi_no_otomatis_pinjaman.php');
                                             <div class="col-md-6">
                                                 <label class="control-label">Sampai</label>
                                                 <div class="input-group">
-                                                    <input type="text" name="sampai" class="form-control" id="datepicker-autoclose2" placeholder="yyyy-mm-dd" required="">
+                                                    <input type="text" name="sampai" class="form-control" id="datepicker-autoclose2" placeholder="yyyy-mm-dd" value="<?= $sampai; ?>" required="">
                                                     <div class="input-group-append">
                                                         <span class="input-group-text"><i class="fa fa-calendar"></i></span>
                                                     </div>
@@ -98,18 +155,18 @@ include ('config_config_cs/fungsi_no_otomatis_pinjaman.php');
                                         <div class="row">    
                                             <div class="col-md-6">
                                                 <label class="control-label">Keperluan</label>
-                                                <textarea class="form-control" name="keperluan"></textarea>
+                                                <textarea class="form-control" name="keperluan"><?= $keperluan; ?></textarea>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="control-label">Note</label>
-                                                <textarea class="form-control" name="note"></textarea>
+                                                <textarea class="form-control" name="note"><?= $notes; ?></textarea>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="border-top">
                                     <div class="card-body">
-                                        <button type="submit" class="btn btn-primary" name="tambah">Submit</button>
+                                        <button type="submit" class="btn btn-primary" name="edit_pinjaman">Submit</button>
                                         <a href="javascript:history.back()"><button type="button" class="btn btn-warning">BACK</button></a>
                                     </div>
                                 </div>
@@ -180,6 +237,24 @@ include ('config_config_cs/fungsi_no_otomatis_pinjaman.php');
                     data    : 'nik='+nik,
                     success : function(data){
                         $('#pesan').html(data);
+                })
+
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#nik').show(function(){
+                $('#pesan').html('<img style="margin-left:10px; width:10px" src="loading.gif">');
+                var nik = $(this).val();
+
+                $.ajax({
+                    type    : 'POST',
+                    url     : 'proses.php',
+                    data    : 'nik='+nik,
+                    success : function(data){
+                        $('#pesan').html(data);
+                        hitung();
                     }
                 })
 

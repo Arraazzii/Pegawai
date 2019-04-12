@@ -14,7 +14,7 @@
         $query = mysqli_query($connect, "INSERT INTO tbl_inventory VALUES ('$no_inven','$nama_barang','$serial_number','$tipe','$deskripsi','$lokasi','$pj','$ket','Approved','')") or die(mysqli_error($connect));
         if ($query) { ?>
             <script type="text/javascript">
-            window.location="../../kepegawaian?view=inventory-barang&mod=add&id=9973843hupa&name=pegaaplication&tambahBarang&status=1";
+            window.location="../?view=inventory-barang&mod=add&id=9973843hupa&name=pegaaplication&tambahBarang&status=1";
             </script>
 <?php 
         } else { ?>

@@ -8,7 +8,7 @@
 		$q_tambah_divisi	= mysqli_query($connect, "INSERT INTO tbl_data_divisi VALUES ('$p_kode_divisi','$p_nama_divisi')");
 			if ($q_tambah_divisi) { ?>
 				<script type="text/javascript">
-					window.location="../../kepegawaian?view=divisi&mod=add&id=9973842hupa&name=pegaaplication&divisi&status=1";
+					window.location="../?view=divisi&mod=add&id=9973842hupa&name=pegaaplication&divisi&status=1";
 		        </script>
 		<?php 
 			} else { ?>

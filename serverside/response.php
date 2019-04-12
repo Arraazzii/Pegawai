@@ -56,7 +56,7 @@ if ($tampil == 'inventory') {
                 <span class="fa fa-list"></span></a> |
             <a href="#'.$value->no_inventory.'" data-target="#myModal'.$value->no_inventory.'" data-toggle="modal" title="Edit Data">
                 <span class="fa fa-edit"></span></a> | 
-            <a href="config_config_cs/del-barang-con.php?id='.$value->no_inventory.'" data-toggle="tooltip" title="Hapus Data"><span class="fa fa-trash"></span></a>';        
+            <a href="config_config_cs/del-barang-con.php?id='.$value->no_inventory.'" data-toggle="tooltip" title="Hapus Data"><span class="fa fa-trash" onClick="return confirm(\'Anda Yakin Ingin Menghapus Data '.$value->no_inventory.' ?\')"></span></a>';        
 
         //memasukan array ke variable $data
 
@@ -132,7 +132,7 @@ if ($tampil == 'inventory') {
             <a href="#'.$value->id.'" data-target="#myModalEmail'.$value->id.'" data-toggle="modal" title="Sent Email">
                 <span class="fas fa-paper-plane"></span>
             </a> |
-            <a href="config_config_cs/del-gaji-pegawai-con.php?id='. $value->id .'" data-toggle="tooltip" title="Hapus Data">
+            <a href="config_config_cs/del-gaji-pegawai-con.php?id='. $value->id .'" data-toggle="tooltip" title="Hapus Data" onClick="return confirm(\'Anda Yakin Ingin Menghapus Data '.$value->nik.' - '.$value->nama.' ?\')">
                 <span class="fa fa-trash"></span>
             </a>';        
 
@@ -203,13 +203,13 @@ if ($tampil == 'inventory') {
 
         //kita bisa buat tombol untuk keperluan edit, delete, dll,
         $ResultData[] = 
-            '<a title="Lihat Detail" data-toggle="tooltip" href="?view=detail-gaji-pegawai&id=997386798hupa&name=pegaaplication&detailGajiPegawai&id='. $value->id .'">
+            '<a title="Lihat Detail" data-target="#myModalDetail'.$value->id.'" data-toggle="modal"href="#'.$value->id.'">
                 <span class="fa fa-list"></span>
             </a> |
-            <a href="?view=edit-gaji-pegawai&id=997386798hupa&name=pegaaplication&editGajiPegawai&id='. $value->id .'" data-toggle="tooltip" title="Edit Data">
+            <a href="?view=edit-pinjaman&id=997386798hupa&name=pegaaplication&editPinjamanPegawai&id='. $value->id .'" data-toggle="tooltip" title="Edit Data">
                 <span class="fa fa-edit"></span>
             </a> |
-            <a href="config_config_cs/del-gaji-pegawai-con.php?id='. $value->id .'" data-toggle="tooltip" title="Hapus Data">
+            <a href="config_config_cs/del-pinjaman-pegawai-con.php?id='. $value->id .'" data-toggle="tooltip" title="Hapus Data" onClick="return confirm(\'Anda Yakin Ingin Menghapus Data '.$value->nik.' - '.$value->nama.' ?\')">
                 <span class="fa fa-trash"></span>
             </a>';        
 

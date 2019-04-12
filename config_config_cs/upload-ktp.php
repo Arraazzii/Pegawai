@@ -20,7 +20,7 @@
         $tgl            = date("Y-m-d");
 
         if (in_array($ekstensi, $ekstensi_diperbolehkan) === true) {
-        	if ($ukuran < 5000000000) {
+        	if ($ukuran <= 5000000000) {
         		$lokasi = '../_file/'.$nama.'.'.$ekstensi;
         		move_uploaded_file($file_tmp, $lokasi);
         		$lokasi1 = '_file/'.$nama.'.'.$ekstensi;

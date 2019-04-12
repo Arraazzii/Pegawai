@@ -76,7 +76,7 @@
                             <table id="zero_config" class="table table-striped table-bordered">
                                   <thead>
                                     <tr>
-                                      <th scope="col" width="7%">#</th><!-- 
+                                      <th scope="col" width="7%">No.</th><!-- 
                                       <th scope="col">Kode Bank</th> -->
                                       <th scope="col">Nama Bank</th>
                                       <th scope="col">Aksi</th>

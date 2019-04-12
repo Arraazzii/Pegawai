@@ -6,6 +6,13 @@
                                 <li class="sidebar-item"><a href="?view=daftar-lembur&id=9973853hupa&name=pegaaplication&daftarLembur" class="sidebar-link"><i class="mdi mdi-clock"></i><span class="hide-menu"> Lembur </span></a></li>
                             </ul>
                         </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Absensi </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="?view=daftar-cuti&id=9973851hupa&name=pegaaplication&daftarCuti" class="sidebar-link"><i class="fas fa-hand-paper"></i><span class="hide-menu"> Check In </span></a></li>
+                                <li class="sidebar-item"><a href="?view=daftar-absen&id=9973852hupa&name=pegaaplication&daftarAbsen" class="sidebar-link"><i class="fas fa-hand-paper"></i><span class="hide-menu"> Check Out </span></a></li>
+                                <li class="sidebar-item"><a href="?view=daftar-lembur&id=9973853hupa&name=pegaaplication&daftarLembur" class="sidebar-link"><i class="mdi mdi-human"></i><span class="hide-menu"> Data Absen </span></a></li>
+                            </ul>
+                        </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Pengajuan </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item"><a href="?view=daftar-cuti&id=9973851hupa&name=pegaaplication&daftarCuti" class="sidebar-link"><i class="mdi mdi-calendar"></i><span class="hide-menu"> Cuti </span></a></li>

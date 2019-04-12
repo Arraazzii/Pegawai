@@ -9,7 +9,7 @@
 		$q_tambah_lokasi	= mysqli_query($connect, "INSERT INTO tbl_data_lokasi VALUES ('$p_kode_lokasi','$p_nama_lokasi','$p_pj_lokasi')");
 			if ($q_tambah_lokasi) { ?>
 				<script type="text/javascript">
-					window.location="../../kepegawaian?view=lokasi&mod=add&id=9973843hupa&name=pegaaplication&lokasi&status=1";
+					window.location="../?view=lokasi&mod=add&id=9973843hupa&name=pegaaplication&lokasi&status=1";
 		        </script>
 		<?php 
 			} else { ?>

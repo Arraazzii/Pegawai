@@ -8,7 +8,7 @@
 		$q_tambah_bank	= mysqli_query($connect, "INSERT INTO tbl_data_bank VALUES ('$p_kode_bank','$p_nama_bank')");
 			if ($q_tambah_bank) { ?>
 				<script type="text/javascript">
-					window.location="../../kepegawaian?view=bank&mod=add&id=9973849hupa&name=pegaaplication&bank&status=1";
+					window.location="../?view=bank&mod=add&id=9973849hupa&name=pegaaplication&bank&status=1";
 		        </script>
 		<?php 
 			} else { ?>

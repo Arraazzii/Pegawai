@@ -235,11 +235,14 @@
                                 <div class="border-top">
                                     <div class="card-body">
                                         <button type="submit" class="btn btn-primary" name="edit_gaji">Submit</button>
-                                        <a href="javascript:history.back()"><button type="button" class="btn btn-warning">BACK</button>
+                                        <a href="javascript:history.back()"><button type="button" class="btn btn-warning">BACK</button></a>
                                     </div>
                                 </div>
                             </form>
                         </div>
+                    </div>
+                </div>
+            </div>
     
     
     <!-- Bootstrap tether Core JavaScript -->

@@ -1,6 +1,5 @@
 <?php
     session_start();
-    error_reporting(0);
 
     include "config_config_cs/timeout.php";
     include "config_config_cs/fungsi_indo_tgl.php";
@@ -103,31 +102,31 @@
             $ambil_halaman      ="pegawai/detail-pegawai.php";
             $ambil_gambar       ="assets/images/favicon.png";
     } elseif ($view == "jabatan") {
-            $nav                ="Referensi Jabatan";
+            $nav                ="Data Master Jabatan";
             $ambil_halaman      ="reF/jabatan.php";
             $ambil_gambar       ="assets/images/favicon.png";
     } elseif ($view == "divisi") {
-            $nav                ="Referensi Divisi";
+            $nav                ="Data Master Divisi";
             $ambil_halaman      ="reF/divisi.php";
             $ambil_gambar       ="assets/images/favicon.png";
     } elseif ($view == "agama") {
-            $nav                ="Referensi Agama";
+            $nav                ="Data Master Agama";
             $ambil_halaman      ="reF/agama.php";
             $ambil_gambar       ="assets/images/favicon.png";
     } elseif ($view == "status-pegawai") {
-            $nav                ="Referensi Status Pegawai";
+            $nav                ="Data Master Status Pegawai";
             $ambil_halaman      ="reF/status-pegawai.php";
             $ambil_gambar       ="assets/images/favicon.png";
     } elseif ($view == "email-pegawai") {
-            $nav                ="Referensi Email Pegawai";
+            $nav                ="Data Master Email Pegawai";
             $ambil_halaman      ="reF/email-pegawai.php";
             $ambil_gambar       ="assets/images/favicon.png";
     } elseif ($view == "bank") {
-            $nav                ="Referensi Bank Transfer";
+            $nav                ="Data Master Bank Transfer";
             $ambil_halaman      ="reF/bank.php";
             $ambil_gambar       ="assets/images/favicon.png";
     } elseif ($view == "lokasi") {
-            $nav                ="Referensi Lokasi";
+            $nav                ="Data Master Lokasi";
             $ambil_halaman      ="reF/lokasi.php";
             $ambil_gambar       ="assets/images/favicon.png";
     } elseif ($view == "list-user") {
@@ -205,6 +204,10 @@
     } elseif ($view == "tambah-pinjaman-pegawai") {
             $nav                ="Tambah Pinjaman Pegawai";
             $ambil_halaman      ="finance/pinjaman/tambah-pinjaman-pegawai.php";
+            $ambil_gambar       ="assets/images/favicon.png";
+    } elseif ($view == "edit-pinjaman") {
+            $nav                ="Edit Pinjaman Pegawai";
+            $ambil_halaman      ="finance/pinjaman/edit-pinjaman-pegawai.php";
             $ambil_gambar       ="assets/images/favicon.png";
     } else {
             $nav                ="Dashboard";

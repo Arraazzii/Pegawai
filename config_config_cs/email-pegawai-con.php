@@ -15,7 +15,7 @@
 				
 			if ($j_cek_ganda > 0) { ?>
 				<script type="text/javascript">
-					window.location="../../kepegawaian?view=email-pegawai&mod=add&id=9973848hupa&name=pegaaplication&emailPegawai&status=6";
+					window.location="../?view=email-pegawai&mod=add&id=9973848hupa&name=pegaaplication&emailPegawai&status=6";
 				</script>
 			<?php
 			} else {
@@ -24,7 +24,7 @@
 
 				if ($q_tambah_email) { ?>
 					<script type="text/javascript">
-						window.location="../../kepegawaian?view=email-pegawai&mod=add&id=9973848hupa&name=pegaaplication&emailPegawai&status=1";
+						window.location="../?view=email-pegawai&mod=add&id=9973848hupa&name=pegaaplication&emailPegawai&status=1";
 			        </script>
 				<?php 
 				} else { ?>
@@ -37,7 +37,7 @@
 
 		} else { ?>
 			<script type="text/javascript">
-				window.location="../../kepegawaian?view=email-pegawai&mod=add&id=9973848hupa&name=pegaaplication&emailPegawai&status=5";
+				window.location="../?view=email-pegawai&mod=add&id=9973848hupa&name=pegaaplication&emailPegawai&status=5";
 			</script>
 		<?php
 		}

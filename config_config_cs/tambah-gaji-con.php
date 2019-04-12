@@ -32,13 +32,13 @@
 		
 			if ($q_tambah_gaji || $q_update_pinjaman) { ?>
 				<script type="text/javascript">
-					window.location="../../kepegawaian?view=gaji-pegawai&id=9973854hupa&name=pegaaplication&gajiPegawai&status=1";
+					window.location="../?view=gaji-pegawai&id=9973854hupa&name=pegaaplication&gajiPegawai&status=1";
 		        </script>
 		<?php 
 			} else { ?>
 				<script type="text/javascript">
-				window.location="../?view=gaji-pegawai&id=9973854hupa&name=pegaaplication&gajiPegawai&status=4";
-	        </script>
+					window.location="../?view=gaji-pegawai&id=9973854hupa&name=pegaaplication&gajiPegawai&status=4";
+		        </script>
 		<?php
 			}
 			
