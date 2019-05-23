@@ -102,15 +102,7 @@ include ('config_config_cs/fungsi_no_otomatis_pinjaman.php');
                                             <div class="col-md-6">
                                                 <label class="control-label">Term</label>
                                                 <?php if ($ketemu > 0){ ?>
-                                                    <select name="term" class="form-control" id="term" onchange="hitung();" readonly />
-                                                    <option>Term</option>
-                                                    <option value="2" <?php if($term == 2){ echo 'selected'; } ?>>2x</option>
-                                                    <option value="3" <?php if($term == 3){ echo 'selected'; } ?>>3x</option>
-                                                    <option value="4" <?php if($term == 4){ echo 'selected'; } ?>>4x</option>
-                                                    <option value="5" <?php if($term == 5){ echo 'selected'; } ?>>5x</option>
-                                                    <option value="6" <?php if($term == 6){ echo 'selected'; } ?>>6x</option>
-                                                    <option value="12" <?php if($term == 12){ echo 'selected'; } ?>>12x</option>
-                                                </select>
+                                                    <input type="text" name="term" class="form-control" id="term" onkeyup="hitung();" value="<?= $term;?>x" required="" readonly="" />
                                                 <?php } else { ?>
                                                     <select name="term" class="form-control" id="term" onchange="hitung();">
                                                     <option>Term</option>

@@ -100,8 +100,7 @@
 
                                                 <a href="#<?php echo $a_bag[0];?>" data-toggle="modal" title="Edit Data" data-target="#myModal<?php echo $a_bag[0];?>"><span class="fa fa-edit"></span></a> |
                                                 <a href=
-                                                "config_config_cs/del-divisi-con.php?id=<?php echo $a_bag['kode_divisi']; ?>" title="Hapus Data" onclick='/return konfirmasi("
-                                                Menghapus data<?php echo $a_bag[1];?>")'><span class='fa fa-trash'></span></a>
+                                                "config_config_cs/del-divisi-con.php?id=<?php echo $a_bag['kode_divisi']; ?>" title="Hapus Data" onClick="return confirm('Anda Yakin Ingin Menghapus Data <?php echo $a_bag[1];?> ?')"><span class='fa fa-trash'></span></a>
                                                 </tr>
 
                                                 <!--modal-->

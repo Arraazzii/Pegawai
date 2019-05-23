@@ -40,6 +40,7 @@ include ('config_config_cs/fungsi_no_otomatis_inventory.php');
                                 <input type="hidden" id="kodeElektronik" value="<?php echo $kodeElektronik;?>">
                                 <input type="hidden" id="kodeNonElektronik" value="<?php echo $kodeNonElektronik;?>">
                                 <input type="hidden" id="kodeIndosat" value="<?php echo $kodeIndosat;?>">
+                                <input type="hidden" id="kodeLIA" value="<?php echo $kodeLIA;?>">
                                 <div class="card-body">
                                     <h4 class="card-title">Deskripsi Barang</h4><hr>
                                     <div class="form-group row">
@@ -68,6 +69,7 @@ include ('config_config_cs/fungsi_no_otomatis_inventory.php');
                                                 <option value="Elektronik">Elektronik</option>
                                                 <option value="Non Elektronik">Non Elektronik</option>
                                                 <option value="Indosat">Indosat</option>
+                                                <option value="LIA">LIA</option>
                                             </select>
                                         </div>
                                     </div>
@@ -163,6 +165,8 @@ include ('config_config_cs/fungsi_no_otomatis_inventory.php');
                             var count = document.getElementById('kodeNonElektronik').value;
                         } else if (select == "Indosat"){
                             var count = document.getElementById('kodeIndosat').value;
+                        } else if (select == "LIA"){
+                            var count = document.getElementById('kodeLIA').value;
                         }
                         document.getElementById('nomor').value = count;
                     });

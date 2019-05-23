@@ -23,9 +23,11 @@
 	$char = "ELK";
 	$char2 = "NLE";
 	$char3 = "IND";
+	$char4 = "LIA";
 	date_default_timezone_set('Asia/Jakarta');
 	$date = date('dmy_His', time());
 	$kodeElektronik = $char . "_" . $date;
 	$kodeNonElektronik = $char2 . "_" . $date;
 	$kodeIndosat = $char3 . "_" . $date;
+	$kodeLIA = $char4 . "_" . $date;
 ?>

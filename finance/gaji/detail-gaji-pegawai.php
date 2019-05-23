@@ -178,8 +178,8 @@
                                                             <td><?php echo $rp.number_format($bpjstk, 0, ".", ".");?></td>
                                                         </tr>
                                                         <tr>
-                                                            <th>Total Pendapatan</th>
-                                                            <td><?php echo $rp.number_format($bruto, 0, ".", ".");?></td><th></th>
+                                                            <th><b>Total Pendapatan</b></th>
+                                                            <td><b><?php echo $rp.number_format($bruto, 0, ".", ".");?></b></td><th></th>
                                                             <th></th><td></td>
                                                         </tr>
                                                     </table>
@@ -211,8 +211,8 @@
                                                                 <td><?= $rp.number_format($pinjaman, 0, ".", "."); ?></td>
                                                             </tr>
                                                             <tr>
-                                                                <td>Gaji Bersih</td>
-                                                                <td><?= $rp.number_format($bersih, 0, ".", "."); ?></td>
+                                                                <td><b>Gaji Bersih</b></td>
+                                                                <td><b><?= $rp.number_format($bersih, 0, ".", "."); ?></b></td>
                                                             </tr>    
                                                         </table>
                                                     </div>
