@@ -174,7 +174,7 @@
                                                     <div class="form-group row">
                                                         <label for="fname" class="col-sm-3 text-right control-label col-form-label">NIP</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" name="nip_edit" id="nip" class="form-control" id="fname" placeholder="Kode Bank" value="<?php echo $row['nip']; ?>" required=""readonly/>
+                                                            <input type="text" name="nip_edit" id="nip" class="form-control" id="fname" placeholder="NIP Pegawai" value="<?php echo $row['nip']; ?>" required=""readonly/>
                                                             <span id="pesan"></span>
                                                         </div>
                                                     </div>

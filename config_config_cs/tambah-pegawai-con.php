@@ -71,7 +71,10 @@
 
 						$q_tambah_file		= mysqli_query($connect, "INSERT INTO tbl_file (id_file) VALUES ('$p_id_file')");
 
-						$q_tambah_about		= mysqli_query($connect, "INSERT INTO tbl_about_me (nip) VALUES ('$p_nip')"); ?>
+						$q_tambah_about		= mysqli_query($connect, "INSERT INTO tbl_about_me (nip) VALUES ('$p_nip')"); 
+
+						$q_tambah_email		= mysqli_query($connect, "INSERT INTO tbl_data_email_pegawai (nip_pegawai) VALUES ('$p_nip')"); ?>?>
+
 						
 						<script type="text/javascript">
 							window.location="../?view=add-pegawai&mod=add&id=9973865hupa&name=pegaaplication&tambahPegawai&status=1";

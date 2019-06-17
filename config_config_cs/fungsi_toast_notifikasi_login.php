@@ -65,7 +65,38 @@
                     });
                 </script>
                 ";
+            } elseif ($ambil == 91) {
+                echo "
+                <script>
+                    $(document).ready(function(){
+                        toastr.success('Check In Success!', 'Anda Berhasil Check In');
+                    });
+                </script>
+                ";
+            } elseif ($ambil == 101) {
+                echo "
+                <script>
+                    $(document).ready(function(){
+                        toastr.error('Check In Failed!', 'Harap Coba Lagi!');
+                    });
+                </script>
+                ";
+            } elseif ($ambil == 102) {
+                echo "
+                <script>
+                    $(document).ready(function(){
+                        toastr.success('Check Out Success!', 'Anda Berhasil Check Out');
+                    });
+                </script>
+                ";
+            } elseif ($ambil == 103) {
+                echo "
+                <script>
+                    $(document).ready(function(){
+                        toastr.error('Check Out Failed!', 'Harap Coba Lagi!');
+                    });
+                </script>
+                ";
             }
-
         }
     ?> 

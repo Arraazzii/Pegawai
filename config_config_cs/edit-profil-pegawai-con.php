@@ -38,6 +38,8 @@
 		$p_tgl_selesai_kontrak_2 = $_POST['tgl_selesai_kontrak_2'];
 		$p_no_telp	 	= $_POST['telp'];	
 		$p_no_hp	 	= $_POST['nohp'];
+		$p_email	 	= $_POST['email'];
+		$p_domain	 	= $_POST['domain'];
 		$p_status_peg 	= $_POST['status_pegawai'];	
 		$p_status_kawin	= $_POST['status_kawin'];
 		$p_nama_bank 	= $_POST['bank'];	
@@ -65,10 +67,11 @@
 
 				$q_edit_tabungan	= mysqli_query($connect, "UPDATE tbl_tabungan set bank = '$p_nama_bank', no_rekening = '$p_no_rekening' WHERE id_tabungan = '$p_id_tabungan' ");
 
-				$q_edit_dokumen	= mysqli_query($connect, "UPDATE tbl_dokumen set no_ktp = '$p_no_ktp', no_kk = '$p_no_kk', no_sim_a = '$p_no_sim_a', no_sim_c = '$p_no_sim_c', no_bpjs_kes = '$p_no_bpjs_kes', no_bpjs_tk = '$p_no_bpjs_tk' WHERE id_dokumen = '$p_id_dokumen' "); ?>
+				$q_edit_dokumen	= mysqli_query($connect, "UPDATE tbl_dokumen set no_ktp = '$p_no_ktp', no_kk = '$p_no_kk', no_sim_a = '$p_no_sim_a', no_sim_c = '$p_no_sim_c', no_bpjs_kes = '$p_no_bpjs_kes', no_bpjs_tk = '$p_no_bpjs_tk' WHERE id_dokumen = '$p_id_dokumen' "); 
+				$q_edit_email	= mysqli_query($connect, "UPDATE tbl_data_email_pegawai SET email_pegawai='$p_email', domain='$p_domain' WHERE nip_pegawai = '$p_nip'") or die(mysqli_error($connect)); ?>
 						
 				<script type="text/javascript">
-					window.location="../../kepegawaian?view=profil-pribadi&id=997386798hupa&name=pegaaplication&detailPegawai&nip=<?php echo $p_nip; ?>&status=1";
+					window.location="../?view=profil-pribadi&id=997386798hupa&name=pegaaplication&detailPegawai&nip=<?php echo $p_nip; ?>&status=1";
 		        </script>
 		<?php 
 			} else { ?>

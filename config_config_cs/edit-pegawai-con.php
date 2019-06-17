@@ -45,7 +45,7 @@
 
 		$q_edit_pegawai 	= mysqli_query($connect, "UPDATE tbl_pegawai SET nama = '$p_nama', id_lahir = '$p_id_lahir', id_alamat = '$p_id_alamat', id_jabatan = '$p_id_jabatan', id_telp = '$p_id_telp', id_status = '$p_id_status', id_tabungan = '$p_id_tabungan' WHERE nik = '$p_nip' ");
 
-			if ($q_edit_pegawai) {
+			if ($q_edit_pegawai && $q_edit_email) {
 
 				$q_edit_lahir		= mysqli_query($connect, "UPDATE tbl_kelahiran set tmpt_lahir = '$p_tmpt_lahir', tgl_lahir = '$p_tgl_lahir', jenis_kelamin = '$p_jk', agama = '$p_agama' WHERE id_lahir = '$p_id_lahir' ");
 
@@ -57,7 +57,9 @@
 
 				$q_edit_status		= mysqli_query($connect, "UPDATE tbl_status set status_peg = '$p_status_peg', sts_kawin = '$p_status_kawin' WHERE id_status = '$p_id_status' ");
 
-				$q_edit_tabungan	= mysqli_query($connect, "UPDATE tbl_tabungan set bank = '$p_nama_bank', no_rekening = '$p_no_rekening' WHERE id_tabungan = '$p_id_tabungan' "); ?>
+				$q_edit_tabungan	= mysqli_query($connect, "UPDATE tbl_tabungan set bank = '$p_nama_bank', no_rekening = '$p_no_rekening' WHERE id_tabungan = '$p_id_tabungan' "); 
+
+				?>
 						
 				<script type="text/javascript">
 					window.location="../?view=data-pegawai&id=997386750hupa&name=pegaaplication&dataPegawai?&status=1";

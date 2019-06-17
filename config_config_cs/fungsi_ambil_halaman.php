@@ -209,6 +209,14 @@
             $nav                ="Edit Pinjaman Pegawai";
             $ambil_halaman      ="finance/pinjaman/edit-pinjaman-pegawai.php";
             $ambil_gambar       ="assets/images/favicon.png";
+    } elseif ($view == "daftar-absen-pegawai") {
+            $nav                ="Absen Pegawai";
+            $ambil_halaman      ="user/absen/daftar_absen.php";
+            $ambil_gambar       ="assets/images/favicon.png";
+    } elseif ($view == "daftar-absen") {
+            $nav                ="Absen Pegawai";
+            $ambil_halaman      ="absensi/absen/daftar-absen.php";
+            $ambil_gambar       ="assets/images/favicon.png";
     } else {
             $nav                ="Dashboard";
             $ambil_halaman      ="home.php";

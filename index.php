@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <?php include('config_config_cs/fungsi_ambil_halaman.php'); ?>
 <?php
+
     $nip=$_SESSION['nip'];
     $level = $_SESSION['leveluser'];
     $sesi_nip = isset($_SESSION['nip']) ? $_SESSION['nip'] : NULL;
@@ -12,6 +12,7 @@
                                                     
             $row = mysqli_fetch_array($view);
 ?>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,8 +28,6 @@
     <link href="dist/css/step.css" rel="stylesheet">
     <link href="assets/libs/toastr/build/toastr.min.css" rel="stylesheet">
     <link href="assets/libs/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
-
-
     <link rel="stylesheet" href="<?php echo $ambilcss1; ?>" />
     <link rel="stylesheet" href="<?php echo $ambilcss2; ?>" />
     <link rel="stylesheet" href="<?php echo $ambilcss3; ?>" />
@@ -45,9 +44,24 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+    <style type="text/css">
+    .rod {
+        width: 210px;
+        height: 210px;
+        border-radius: 50%;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .h {
+        font-family: "Times New Roman", Times, serif, helvetica;
+        font-size: 32px;
+        text-align: center;
+    }
+    </style>
 </head>
 
-<body>
+<body onload="getLocation();">
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
@@ -78,21 +92,18 @@
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
                             <img src="assets/images/logo-icon.png" alt="homepage" class="light-logo" />
-
                         </b>
                         <!--End Logo icon -->
-                         <!-- Logo text -->
+                        <!-- Logo text -->
                         <span class="logo-text">
-                             <!-- dark Logo text -->
-                             <img src="assets/images/logo-text.png" alt="homepage" class="light-logo" />
-
+                            <!-- dark Logo text -->
+                            <img src="assets/images/logo-text.png" alt="homepage" class="light-logo" />
                         </span>
                         <!-- Logo icon -->
                         <!-- <b class="logo-icon"> -->
-                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                            <!-- Dark Logo icon -->
-                            <!-- <img src="../../assets/images/logo-text.png" alt="homepage" class="light-logo" /> -->
-
+                        <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                        <!-- Dark Logo icon -->
+                        <!-- <img src="../../assets/images/logo-text.png" alt="homepage" class="light-logo" /> -->
                         <!-- </b> -->
                         <!--End Logo icon -->
                     </a>
@@ -132,9 +143,9 @@
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
                             <?php if ($row['foto'] == NULL) { ?>
-                                <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/1.jpg" alt="user" class="rounded-circle" width="25px" height="25px"></a>
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/1.jpg" alt="user" class="rounded-circle" width="25px" height="25px"></a>
                             <?php } else { ?>
-                                <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?php echo $row['foto']; ?>" alt="user" class="rounded-circle" width="25px" height="25px"></a>
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?php echo $row['foto']; ?>" alt="user" class="rounded-circle" width="25px" height="25px"></a>
                             <?php } ?>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated">
                                 <a class="dropdown-item" href="?view=profil-pribadi&id=997386739hupa&name=pegaaplication&detailPegawai&nip=<?php echo $sesi_nip;?>"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
@@ -197,19 +208,22 @@
             <div class="page-breadcrumb hidden-print">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title"><?php echo $nav; ?></h4>
+                        <h4 class="page-title">
+                            <?php echo $nav; ?>
+                        </h4>
                         <div class="ml-auto text-right">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="?view=halaman-utama&id=9973838hupa&name=pegaaplication&dashboard">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page"><?php echo $nav; ?></li>
+                                    <li class="breadcrumb-item active" aria-current="page">
+                                        <?php echo $nav; ?>
+                                    </li>
                                 </ol>
                             </nav>
                         </div>
                     </div>
                 </div>
-            </div>  
-
+            </div>
             <div class="container-fluid">
                 <?php include $ambil_halaman; ?>
             </div>
@@ -220,16 +234,16 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="hidden-print">
-              <div class="footer_fixed footer text-center">
-                <script>
-                document.write(new Date().getFullYear() - 1 )
+                <div class="footer_fixed footer text-center">
+                    <script>
+                        document.write(new Date().getFullYear() - 1 )
                 </script>
-                -
-                <script>
-                document.write(new Date().getFullYear() )
+                    -
+                    <script>
+                        document.write(new Date().getFullYear() )
                 </script> &copy All Rights Reserved <br> Designed and Developed by <a href="https://lrcom.co.id" target="_blank">PT. Lumbung Riang Communication</a>.
-              </div>
-              <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
@@ -245,7 +259,6 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-
     <script src="<?php echo $ambiljs1; ?>"></script>
     <script src="<?php echo $ambiljs2; ?>"></script>
     <script src="<?php echo $ambiljs3; ?>"></script>
@@ -266,22 +279,268 @@
     <script src="<?php echo $ambiljs18; ?>"></script>
     <script src="<?php echo $ambiljs19; ?>"></script>
     <script src="<?php echo $ambiljs20; ?>"></script>
-
-        <!-- this page js -->
+    <!-- this page js -->
     <script src="assets/libs/toastr/build/toastr.min.js"></script>
     <script src="assets/libs/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
     <script src="assets/libs/magnific-popup/meg.init.js"></script>
-
     <?php include ('config_config_cs/fungsi_toast_notifikasi_login.php'); ?>
 </body>
 
 </html>
+<!--modal-->
+<div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true ">
+    <div class="modal-dialog" role="document ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">CHECK IN</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true ">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="config_config_cs/ci-con.php" method="post" id="tambah" onload="getLocation()">
+                    <div class="form-group">
+                        <input type="hidden" name="nip" value="<?php echo $sesi_nip; ?>" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="jam" value="09:00:00" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="lat" id="lat" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="long" id="long" class="form-control">
+                    </div>
+                    <p id="demo"></p>
+                    <div class="form-group">
+                        <center>
+                            <button class="btn btn-primary rod animated" name="check_in" id="elm">
+                                <h1 class="h">CHECK IN</h1>
+                            </button>
+                        </center>
+                    </div>
+                    <div class="form-group">
+                        <div class="alert alert-danger">
+                            <label><center><b>DIREKOMENDASIKAN UNTUK CHECK IN DAN CHECK OUT DENGAN MENGGUNAKAN SMARTPHONE<b></center></label>
+                        </div>
+                    </div></br>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--modal-->
+<div class="modal fade" id="Modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true ">
+    <div class="modal-dialog" role="document ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">CHECK IN</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true ">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="config_config_cs/ci-on-site-con.php" method="post" id="tambah" onload="getLocation()">
+                    <div class="form-group">
+                        <input type="hidden" name="nip" value="<?php echo $sesi_nip; ?>" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="jam" value="09:00:00" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="lat" id="lat1" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="long1" id="long1" class="form-control">
+                    </div>
+                    <p id="demo"></p>
+                    <div class="form-group">
+                        <label>ID WO</label>
+                        <input type="text" name="keterangan" placeholder="Masukkan ID WO" class="form-control" required="">
+                    </div>
+                    <div class="form-group">
+                        <center>
+                            <button class="btn btn-primary rod animated" name="check_in" id="elm1">
+                                <h1 class="h">CHECK IN</h1>
+                            </button>
+                        </center>
+                    </div>
+                    <div class="form-group">
+                        <div class="alert alert-danger">
+                            <label><center><b>DIREKOMENDASIKAN UNTUK CHECK IN DAN CHECK OUT DENGAN MENGGUNAKAN SMARTPHONE<b></center></label>
+                        </div>
+                    </div></br>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<?php
+    date_default_timezone_set('Asia/Jakarta');
+    $tanggal = date("Y-m-d");
+    // $tgl2 = date('Y-m-d H:i:s', strtotime('+9 hours +30 minutes', strtotime($tanggal)));
+    // echo $tgl2;
+    $cari=mysqli_query($connect, "SELECT * FROM tbl_absen WHERE nip='$sesi_nip' AND tgl_absen = '$tanggal'") or die(mysqli_error($connect));
+
+    $row  = mysqli_fetch_array($cari);
+
+    $p_id           = $row['id_absen'];
+    $p_nip          = $row['nip'];
+    $p_tgl_absen    = $row['tgl_absen'];
+    $p_check_in     = $row['check_in'];
+
+    $tgl2 = date('Y-m-d H:i:s', strtotime('+9 hours +30 minutes', strtotime($p_check_in)));
+
+?>
+<!--modal-->
+<div class="modal fade" id="Modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true ">
+    <div class="modal-dialog" role="document ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">CHECK OUT</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true ">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="config_config_cs/co-con.php" method="post" id="tambah" onload="getLocation()">
+                    <div class="form-group">
+                        <input type="hidden" name="id" value="<?= $p_id ?>" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="nip" value="<?= $p_nip ?>" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="check_in" value="<?= $p_check_in ?>" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="tgl2" value="<?= $tgl2 ?>" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="lat" id="lat2" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="long" id="long2" class="form-control">
+                    </div>
+                    <p id="demo"></p>
+                    <div class="form-group">
+                        <center>
+                            <button class="btn btn-primary rod animated" name="check_out" id="elm2">
+                                <h1 class="h">CHECK OUT</h1>
+                            </button>
+                        </center>
+                    </div>
+                    <div class="form-group">
+                        <div class="alert alert-danger">
+                            <label><center><b>DIREKOMENDASIKAN UNTUK CHECK IN DAN CHECK OUT DENGAN MENGGUNAKAN SMARTPHONE<b></center></label>
+                        </div>
+                    </div></br>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--modal-->
+<div class="modal fade" id="Modal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true ">
+    <div class="modal-dialog" role="document ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">CHECK OUT</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true ">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="config_config_cs/co-on-site-con.php" method="post" id="tambah" onload="getLocation()">
+                    <div class="form-group">
+                        <input type="hidden" name="id" value="<?= $p_id ?>" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="nip" value="<?= $p_nip ?>" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="check_in" value="<?= $p_check_in ?>" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="tgl2" value="<?= $tgl2 ?>" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="lat" id="lat3" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="long" id="long3" class="form-control">
+                    </div>
+                    <p id="demo"></p>
+                    <div class="form-group">
+                        <label>ID WO</label>
+                        <input type="text" name="keterangan" placeholder="Masukkan ID WO" class="form-control" required="">
+                    </div>
+                    <div class="form-group">
+                        <center>
+                            <button class="btn btn-primary rod animated" name="check_out" id="elm3">
+                                <h1 class="h">CHECK OUT</h1>
+                            </button>
+                        </center>
+                    </div>
+                    <div class="form-group">
+                        <div class="alert alert-danger">
+                            <label><center><b>DIREKOMENDASIKAN UNTUK CHECK IN DAN CHECK OUT DENGAN MENGGUNAKAN SMARTPHONE<b></center></label>
+                        </div>
+                    </div></br>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#elm").hover(function() {
+        $(this).toggleClass("bounceIn");
+        $(this).toggleClass("infinite");
+    });
+    $("#elm1").hover(function() {
+        $(this).toggleClass("bounceIn");
+        $(this).toggleClass("infinite");
+    });
+    $("#elm2").hover(function() {
+        $(this).toggleClass("bounceIn");
+        $(this).toggleClass("infinite");
+    });
+    $("#elm3").hover(function() {
+        $(this).toggleClass("bounceIn");
+        $(this).toggleClass("infinite");
+    });
+});
+</script>
+<script>
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    document.getElementById('lat').value = position.coords.latitude;
+    document.getElementById('long').value = position.coords.longitude;
+
+    document.getElementById('lat1').value = position.coords.latitude;
+    document.getElementById('long1').value = position.coords.longitude;
+
+    document.getElementById('lat2').value = position.coords.latitude;
+    document.getElementById('long2').value = position.coords.longitude;
+
+    document.getElementById('lat3').value = position.coords.latitude;
+    document.getElementById('long3').value = position.coords.longitude;
+}
+</script>
 <?php
 } else {
     session_destroy(); ?>
-    <script type="text/javascript">
-        window.location="?view=login&id=9973801hupa&name=pegaaplication&Silahkan Login";
-    </script>
+<script type="text/javascript">
+window.location = "?view=login&id=9973801hupa&name=pegaaplication&Silahkan Login";
+</script>
 <?php
     }
 ?>

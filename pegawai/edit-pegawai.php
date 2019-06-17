@@ -4,7 +4,7 @@
 
   $id_daftar  = isset($_GET['nip']) ? $_GET['nip'] : "";
 
-  $q_data_edit  = mysqli_query($connect, "SELECT * FROM tbl_pegawai, tbl_kelahiran, tbl_jabatan, tbl_no_telp, tbl_status, tbl_alamat, tbl_tabungan, tbl_dokumen, tbl_file WHERE tbl_pegawai.id_lahir = tbl_kelahiran.id_lahir AND tbl_pegawai.id_jabatan = tbl_jabatan.id_jabatan AND tbl_pegawai.id_telp = tbl_no_telp.id_telp AND tbl_pegawai.id_status = tbl_status.id_status AND tbl_pegawai.id_alamat = tbl_alamat.id_alamat AND tbl_pegawai.id_tabungan = tbl_tabungan.id_tabungan AND tbl_pegawai.nik= '$id_daftar'");
+  $q_data_edit  = mysqli_query($connect, "SELECT * FROM tbl_pegawai JOIN tbl_kelahiran ON tbl_pegawai.id_lahir = tbl_kelahiran.id_lahir JOIN tbl_jabatan ON tbl_pegawai.id_jabatan = tbl_jabatan.id_jabatan JOIN tbl_alamat ON tbl_pegawai.id_alamat = tbl_alamat.id_alamat JOIN tbl_no_telp ON tbl_pegawai.id_telp = tbl_no_telp.id_telp JOIN tbl_status ON tbl_pegawai.id_status = tbl_status.id_status JOIN tbl_tabungan ON tbl_pegawai.id_tabungan = tbl_tabungan.id_tabungan JOIN tbl_dokumen ON tbl_pegawai.id_dokumen = tbl_dokumen.id_dokumen JOIN tbl_file ON tbl_pegawai.id_file = tbl_file.id_file JOIN tbl_data_email_pegawai ON tbl_pegawai.nik = tbl_data_email_pegawai.nip_pegawai WHERE tbl_pegawai.nik= '$id_daftar'");
   $a_data_edit  = mysqli_fetch_array($q_data_edit);
   
     $id_lahir       = $a_data_edit['id_lahir']; 

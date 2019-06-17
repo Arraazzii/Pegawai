@@ -1,10 +1,10 @@
 <?php include ('config_config_cs/fungsi_no_otomatis_tambah-pegawai.php'); ?>
 <?php
-  error_reporting(0);
+  
 
   $id_daftar  = isset($_GET['nip']) ? $_GET['nip'] : "";
 
-  $q_data_edit  = mysqli_query($connect, "SELECT * FROM tbl_pegawai, tbl_kelahiran, tbl_jabatan, tbl_no_telp, tbl_status, tbl_alamat, tbl_tabungan, tbl_dokumen, tbl_file WHERE tbl_pegawai.id_lahir = tbl_kelahiran.id_lahir AND tbl_pegawai.id_jabatan = tbl_jabatan.id_jabatan AND tbl_pegawai.id_telp = tbl_no_telp.id_telp AND tbl_pegawai.id_status = tbl_status.id_status AND tbl_pegawai.id_alamat = tbl_alamat.id_alamat AND tbl_pegawai.id_tabungan = tbl_tabungan.id_tabungan AND tbl_dokumen.id_dokumen = tbl_pegawai.id_dokumen AND tbl_pegawai.nik= '$id_daftar'");
+  $q_data_edit  = mysqli_query($connect, "SELECT * FROM tbl_pegawai JOIN tbl_kelahiran ON tbl_pegawai.id_lahir = tbl_kelahiran.id_lahir JOIN tbl_jabatan ON tbl_pegawai.id_jabatan = tbl_jabatan.id_jabatan JOIN tbl_alamat ON tbl_pegawai.id_alamat = tbl_alamat.id_alamat JOIN tbl_no_telp ON tbl_pegawai.id_telp = tbl_no_telp.id_telp JOIN tbl_status ON tbl_pegawai.id_status = tbl_status.id_status JOIN tbl_tabungan ON tbl_pegawai.id_tabungan = tbl_tabungan.id_tabungan JOIN tbl_dokumen ON tbl_pegawai.id_dokumen = tbl_dokumen.id_dokumen JOIN tbl_file ON tbl_pegawai.id_file = tbl_file.id_file JOIN tbl_data_email_pegawai ON tbl_pegawai.nik = tbl_data_email_pegawai.nip_pegawai WHERE tbl_pegawai.nik= '$id_daftar'");
   $a_data_edit  = mysqli_fetch_array($q_data_edit);
   
     $id_lahir       = $a_data_edit['id_lahir']; 
@@ -40,6 +40,8 @@
     $p_tgl_selesai_kontrak_2 = $a_data_edit['tgl_selesai_kontrak_2'];
     $p_no_telp      = $a_data_edit['telp']; 
     $p_no_hp        = $a_data_edit['hp'];
+    $p_email        = $a_data_edit['email_pegawai'];
+    $p_domain       = $a_data_edit['domain'];
     $p_status_peg   = $a_data_edit['status_peg']; 
     $p_status_kawin = $a_data_edit['sts_kawin'];
     $p_nama_bank    = $a_data_edit['bank']; 
@@ -109,7 +111,6 @@
                                 <input type="hidden" value="<?php echo $id_tabungan; ?>" name="id_tabungan">
                                 <input type="hidden" value="<?php echo $id_telp; ?>" name="id_telp">
                                 <input type="hidden" value="<?php echo $id_jabatan; ?>" name="id_jabatan">
-                                <input type="hidden" value="<?php echo $id_pendidikan; ?>" name="id_pendidikan">
                                 <input type="hidden" value="<?php echo $id_dokumen; ?>" name="id_dokumen">
                                 <input type="hidden" value="<?php echo $id_file; ?>" name="id_file"><br>
                                 <div class="clearfix"></div>
@@ -122,7 +123,7 @@
                                                     <input type="text" data-toggle="tooltip" title="NIP Terakhir" class="form-control" value="<?php echo $nomor_nip; ?>" readonly>
                                                 </div>
                                                 <div class="col-md-3">
-                                                    <input type="text" data-toggle="tooltip" title="NIP Pegawai" class="form-control" name="nip" id="validationDefault05" placeholder="Nomer Induk Pegawai" required="" readonly="" value="<?php echo $p_nip; ?>"> 
+                                                    <input type="text" data-toggle="tooltip" title="NIP Pegawai" class="form-control" name="nip" id="validationDefault05" placeholder="Nomer Induk Pegawai" required="" readonly="" value="<?php echo $id_daftar; ?>"> 
                                                 </div>
                                             </div>
                                           </div>
@@ -336,6 +337,17 @@
                                           <div class="form-group">
                                               <label class="control-label">No. Handphone</label>
                                               <input type="Number" maxlength="13" class="form-control" name="nohp" placeholder="Indonesia Phone Number" value="<?php echo $p_no_hp; ?>" required/>
+                                          </div>
+                                          <div class="form-group">
+                                              <label class="control-label">Email</label>
+                                              <div class="row mb-6">
+                                                <div class="col-md-6">
+                                                    <input id="name" name="email" type="text" class="form-control"  value="<?php echo $p_email; ?>" placeholder="Email" required>
+                                                </div>
+                                                <div class="col-md-6">
+                                                  <input id="name" name="domain" type="text" class="form-control"  value="<?php echo $p_domain; ?>" placeholder="Domain" required>
+                                                </div>
+                                            </div>
                                           </div>
                                           <div class="form-group">
                                               <label class="control-label">Status Pegawai</label>
