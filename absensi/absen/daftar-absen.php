@@ -119,8 +119,10 @@ tfoot input {
                             </thead>
                             <tbody>
                                 <?php
-                                        
-                                            $view = mysqli_query($connect, "SELECT * FROM tbl_absen JOIN tbl_pegawai ON tbl_absen.nip = tbl_pegawai.nik");
+                                        date_default_timezone_set('Asia/Jakarta');
+                                        $tgl1 = date ("m");
+                                        $tgl2 = date('Y-m-d H:i:s', strtotime('-3 days', strtotime($tgl1)));
+                                            $view = mysqli_query($connect, "SELECT * FROM tbl_absen JOIN tbl_pegawai ON tbl_absen.nip = tbl_pegawai.nik WHERE MONTH(tgl_absen) = '$tgl1'");
                                             $no =1;
                                             while ($row = mysqli_fetch_array($view)) {
                                                 
@@ -131,7 +133,8 @@ tfoot input {
                                         <?= $no ?>
                                     </td>
                                     <td>
-                                        <?= $row['nik'] ?> - <?= $row['nama'] ?>
+                                        <?= $row['nik'] ?> -
+                                        <?= $row['nama'] ?>
                                     </td>
                                     <td>
                                         <?= bln_indo($row['tgl_absen']) ?>
@@ -165,7 +168,7 @@ tfoot input {
                                             }
                                             ?>
                             </tbody>
-                            <tfoot>
+                            <!-- <tfoot>
                                 <tr>
                                     <th>Cari</th>
                                     <th>Cari</th>
@@ -175,7 +178,7 @@ tfoot input {
                                     <th>Cari</th>
                                     <th colspan="2">Cari</th>
                                 </tr>
-                            </tfoot>
+                            </tfoot> -->
                         </table>
                     </div>
                 </div>
@@ -382,7 +385,8 @@ tfoot input {
                                         <?= $row1['keterangan_ci']; ?>
                                     </td>
                                     <td>
-                                        <a href="https://www.google.com/maps/place/<?= $row1['geotag_ci']; ?>" target="_blank"><?= $row1['geotag_ci']; ?></a>
+                                        <a href="https://www.google.com/maps/place/<?= $row1['geotag_ci']; ?>" target="_blank">
+                                            <?= $row1['geotag_ci']; ?></a>
                                     </td>
                                 </tr>
                             </table>
@@ -409,7 +413,8 @@ tfoot input {
                                         <?= $row1['keterangan_co']; ?>
                                     </td>
                                     <td>
-                                        <a href="https://www.google.com/maps/place/<?= $row1['geotag_co']; ?>" target="_blank"><?= $row1['geotag_co']; ?></a>
+                                        <a href="https://www.google.com/maps/place/<?= $row1['geotag_co']; ?>" target="_blank">
+                                            <?= $row1['geotag_co']; ?></a>
                                     </td>
                                 </tr>
                             </table>
@@ -447,6 +452,16 @@ tfoot input {
 <script src="assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 <script type="text/javascript" src="assets/extra-libs/datetimepicker/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 <script>
+/****************************************
+ *       Basic Table                   *
+ ****************************************/
+$('#zero_config').DataTable({
+    "bProcessing": true,
+    "bServerSide": true,
+    "ajax": "serverside/response.php?view=absen",
+});
+</script>
+<!-- <script>
 /****************************************
  *       Basic Table                   *
  ****************************************/
@@ -517,7 +532,7 @@ table.columns().every(function() {
         }
     });
 });
-</script>
+</script> -->
 <script>
 $('.form_datetime').datetimepicker({
     //language:  'fr',

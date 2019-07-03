@@ -310,4 +310,88 @@ if ($tampil == 'inventory') {
     //create our json
     $datatable->create_data();
 
+} elseif ($tampil == 'absen') {
+
+    //kolom apa saja yang akan ditampilkan
+    $columns = array(
+        'tbl_absen.nip',
+        'tbl_pegawai.nama',
+        'tbl_absen.tgl_absen',
+        'tbl_absen.check_in',
+        'tbl_absen.geotag_ci',
+        'tbl_absen.check_out',
+        'tbl_absen.geotag_co',
+        'tbl_absen.status',
+        );
+
+
+    //jika ingin langsung menambahkan kondisi where dengan parameter terentu query seperti ini 
+        //misal kita akan langsung menambahkan kondisi langsung hanya menampilkan provinsi jawabarat saja, 
+    //prepared statement untuk keamanan data
+    /*$array_id_provinsi = array('provinsi.id_prov' => 32); //32 adalah id untuk jawabarat
+        $query = $datatable->get_custom("select provinsi.nama_prov,kabupaten.nama_kab, kecamatan.nama_kec,id_kec
+    from provinsi inner join kabupaten 
+    on provinsi.id_prov=kabupaten.id_prov
+    inner join kecamatan on kabupaten.id_kab=kecamatan.id_kab where provinsi.id_prov=?",$columns,$array_id_provinsi);*/
+
+    //untuk mencobanya uncomment query diatas dan comment query dibawah
+
+    //lakukan query data dari 3 table dengan inner join
+    date_default_timezone_set('Asia/Jakarta');
+    $tgl1 = date ("m");
+
+        $array_status = array('tgl_absen' => $tgl1);
+        $query = $datatable->get_custom("SELECT * FROM tbl_absen JOIN tbl_pegawai ON tbl_absen.nip = tbl_pegawai.nik",$columns);
+
+
+        //buat inisialisasi array data
+        $data = array();
+
+        $no = 1;
+        foreach ($query as $value) {
+
+        //array sementara data
+        $ResultData = array();
+        
+        //masukan data ke array sesuai kolom table
+        $ResultData[] = $no;
+        $ResultData[] = $value->nip . ' - ' . $value->nama;
+        $ResultData[] = bln_indo($value->tgl_absen);
+        $ResultData[] = $value->tgl_absen;
+        $ResultData[] = $value->check_in;
+        $ResultData[] = $value->check_out;
+        // $ResultData[] = $value->status;
+
+        if ($value->status === 'Hadir') {
+            $ResultData[] = '<span class="badge badge-success">Hadir</span>';
+        } else {
+            $ResultData[] = '<span class="badge badge-danger">Terlambat</span>';
+        }
+        
+
+        //bisa juga pake logic misal jika value tertentu maka outputnya
+
+        //kita bisa buat tombol untuk keperluan edit, delete, dll,
+        $ResultData[] = 
+            '<a title="Lihat Detail" data-target="#myModalDetail'.$value->id_absen.'" data-toggle="modal" href="#'.$value->id_absen.'">
+                <span class="fa fa-list"></span>
+            </a> |
+            <a data-target="#myModalEdit'.$value->id_absen.'" data-toggle="modal" href="#'.$value->id_absen.'" title="Edit Data">
+                <span class="fa fa-edit"></span>
+            </a> |
+            <a href="config_config_cs/del-absen-pegawai-con.php?id='.$value->id_absen.'" data-toggle="tooltip" title="Hapus Data" onClick="return confirm(\'Anda Yakin Ingin Menghapus Data '.$value->nama.' Di Tanggal '.$value->tgl_absen.' ?> ?\')">
+                <span class="fa fa-trash"></span>
+            </a>';        
+
+        //memasukan array ke variable $data
+
+        $data[] = $ResultData;
+        $no++;
+        }
+
+    //set data
+    $datatable->set_data($data);
+    //create our json
+    $datatable->create_data();
+
 }
