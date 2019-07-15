@@ -120,9 +120,9 @@ tfoot input {
                             <tbody>
                                 <?php
                                         date_default_timezone_set('Asia/Jakarta');
-                                        $tgl1 = date ("m");
-                                        $tgl2 = date('Y-m-d H:i:s', strtotime('-3 days', strtotime($tgl1)));
-                                            $view = mysqli_query($connect, "SELECT * FROM tbl_absen JOIN tbl_pegawai ON tbl_absen.nip = tbl_pegawai.nik WHERE MONTH(tgl_absen) = '$tgl1'");
+                                        $tgl1 = date ("Y-m-d");
+                                        $tgl2 = date('Y-m-d', strtotime('-3 days', strtotime($tgl1)));
+                                            $view = mysqli_query($connect, "SELECT * FROM tbl_absen JOIN tbl_pegawai ON tbl_absen.nip = tbl_pegawai.nik WHERE tgl_absen BETWEEN '$tgl2' AND '$tgl1'");
                                             $no =1;
                                             while ($row = mysqli_fetch_array($view)) {
                                                 

@@ -337,11 +337,13 @@ if ($tampil == 'inventory') {
     //untuk mencobanya uncomment query diatas dan comment query dibawah
 
     //lakukan query data dari 3 table dengan inner join
-    date_default_timezone_set('Asia/Jakarta');
-    $tgl1 = date ("m");
+        date_default_timezone_set('Asia/Jakarta');
+        $tgl1 = date ("Y-m-d");
+        $tgl2 = date('Y-m-d', strtotime('-3 days', strtotime($tgl1)));
+        
+        $array_status = array($tgl2, $tgl1);
 
-        $array_status = array('tgl_absen' => $tgl1);
-        $query = $datatable->get_custom("SELECT * FROM tbl_absen JOIN tbl_pegawai ON tbl_absen.nip = tbl_pegawai.nik",$columns);
+        $query = $datatable->get_custom("SELECT * FROM tbl_absen JOIN tbl_pegawai ON tbl_absen.nip = tbl_pegawai.nik WHERE tgl_absen BETWEEN ? AND ?",$columns, $array_status);
 
 
         //buat inisialisasi array data
